@@ -10,7 +10,7 @@ Under the #unique words comment, the code takes the dictionary and finds values 
 Under the # frequencies of words comment, the code creates a counter for the frequencies of words and the number of words of that frequency.
 
 Online Word Cloud:
-Using the online word cloud generator, we uploaded the allwords.txt file and created the word cloud!
+Using the online word cloud generator, Hannah uploaded the allwords.txt file and created the word cloud and asked for our groups input!
 We used a color palette on coolors.co and also edited the three different fonts we used to Saira, PT Mono, and Alata.
 
 a3_novelvisualization:
