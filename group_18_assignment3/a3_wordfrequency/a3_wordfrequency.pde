@@ -57,9 +57,9 @@ void draw(){
   // correlates with selected graph point
   fill(pink);
   textFont(bigFont);
-  text(word_text, width/2, height/1.16);
+  text(word_text, width/1.8, height/1.16);
   fill(yellow);
-  text(freq_text, width/2, height/1.05);
+  text(freq_text, width/1.8, height/1.05);
   
   // yellow line at bottom of canvas
   stroke(yellow);
@@ -71,9 +71,9 @@ void draw(){
   // instructions for interaction (< or >)
   textFont(smallFont);
   fill(pink);
-  text("WORDS", width/1.118, height/1.16);
+  text("WORDS", width/1.128, height/1.16);
   fill(yellow);
-  text("USES", width/1.093, height/1.095);
+  text("USES", width/1.103, height/1.095);
   fill(yellow);
   text("USE LEFT & RIGHT ARROWS", width/9.5, height/1.095);
 
