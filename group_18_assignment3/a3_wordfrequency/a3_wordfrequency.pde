@@ -6,6 +6,7 @@ color pink = #EE6AFF;
 // separate lists of word counts and frequencies
 String[] words = {};
 String[] frequencies = {};
+float max_freq;
 
 // common units of translation
 int trans_x = 125;
@@ -37,7 +38,8 @@ void setup(){
   
   // places the graph
   translate(trans_x, trans_y);
-  graph(height/1.6, width/1.5);
+  dot_graph(height/1.6, width/1.5);
+  
 }
 
 
@@ -47,7 +49,7 @@ void draw(){
   String word_text = words[key_index];
   String freq_text = frequencies[key_index];
   
-  // refreshes backgrund
+  // refreshes background
   fill(space);
   rect(0, height/1.26, width, 400);
   
@@ -55,8 +57,9 @@ void draw(){
   // correlates with selected graph point
   fill(pink);
   textFont(bigFont);
-  text(word_text, width/1.68, height/1.16);
+  text(word_text, width/2, height/1.16);
   fill(yellow);
+  text(freq_text, width/2, height/1.05);
   
   // yellow line at bottom of canvas
   stroke(yellow);
@@ -66,7 +69,6 @@ void draw(){
   
   // footer labels
   // instructions for interaction (< or >)
-  text(freq_text, width/1.68, height/1.05);
   textFont(smallFont);
   fill(pink);
   text("WORDS", width/1.118, height/1.16);
@@ -85,42 +87,39 @@ void read(String[] data){
   for (int i=0; i < data.length; i++){
     String temp = data[i];
     String[] separate = split(temp, ": ");
-    words = append(words, separate[0]);
-    frequencies = append(frequencies, separate[1]);
+    words = append(words, separate[1]);
+    frequencies = append(frequencies, separate[0]);
+    if (max_freq < float(separate[0])){
+      max_freq = float(separate[0]);
+    }
+    
   }
+  // reverses lists into word ascending order
+  words = reverse(words);
+  frequencies = reverse(frequencies);
 }
 
 
-void graph(float h, float w){
+void dot_graph(float h, float w){
   // sets maximum constants
   // sets adjustment values to scale max constants to the canvas
   float max_h = float(words[words.length-1]);
-  float max_w = float(frequencies[0]);
+  float max_w = max_freq;
+  
   adjust_h = max_h/h;
   adjust_w = max_w/w;
   
-  // defines opacity increments
-  float op_adjust = 255/float(words.length);
-  float opacity = op_adjust;
-
   // creates bars that represent the data
   // x is the frequency
   // y is the number of words with that frequency
   for (int i = words.length - 1; i > -1; i--){
     float x = float(frequencies[i]) / adjust_w;
     float y = float(words[i]) / adjust_h;
-    noStroke();
-    rectMode(CORNER);
-    fill(space);
-    rect(0, 0, x-1, y-1, 50);
-    fill(pink, opacity);
-    rect(0, 0, x, y, 50);
-    opacity += op_adjust; // adjusts opacity
-    println(opacity);
     
     fill(pink);
     ellipseMode(CENTER);
-    ellipse(x, y, 10, 10);
+    noStroke();
+    ellipse(x, y, 5, 5);
     ellipseMode(CORNER);
   }
   
@@ -140,7 +139,9 @@ void graph(float h, float w){
   text("WORDS", -23, (max_h/adjust_h)+40);
 }
 
+
 void keyPressed(){
+  
   // navigates between the different
   // plot points on the graph
   int max = words.length -1;
@@ -156,18 +157,17 @@ void keyPressed(){
   }
   
   // creates interactive yellow point selections
+  
   float word = (float(words[key_index])/adjust_h);
   float p_word = (float(words[prev])/adjust_h);
   float freq = (float(frequencies[key_index])/adjust_w);
   float p_freq = (float(frequencies[prev])/adjust_w);
   ellipseMode(CENTER);
   noStroke();
-  fill(space);
-  ellipse(p_freq + trans_x, p_word + trans_y, 20, 20);
   fill(pink);
-  ellipse(p_freq + trans_x, p_word + trans_y, 10, 10);
-  fill(yellow);
-  ellipse(freq + trans_x, word + trans_y, 15, 15);
+  ellipse(p_freq + trans_x, p_word + trans_y, 5, 5);
+  fill(255);
+  ellipse(freq + trans_x, word + trans_y, 5, 5);
   ellipseMode(CORNER);
 
 }
