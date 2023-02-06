@@ -11,7 +11,7 @@ Under the # frequencies of words comment, the code creates a counter for the fre
 
 Online Word Cloud:
 Using the online word cloud generator, we uploaded the allwords.txt file and created the word cloud!
-We used a color palette on coolors.co and also editted the three different fonts we used to Saira, PT Mono, and Alata.
+We used a color palette on coolors.co and also edited the three different fonts we used to Saira, PT Mono, and Alata.
 
 a3_novelvisualization:
 
