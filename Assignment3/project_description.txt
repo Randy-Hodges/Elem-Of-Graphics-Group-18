@@ -5,7 +5,9 @@ individual parts -- this ensures all group members are participating and have ma
 
 
 Extract Words:
-
+Hannah wrote part of the extract_words.py file. She wrote the code to generate the uniquewords.txt file and the wordfrequency.txt file.
+Under the #unique words comment, the code takes the dictionary and finds values equal to 1 (meaning the words that show up once) writes it into the uniquewords.txt file.
+Under the # frequencies of words comment, the code creates a counter for the frequencies of words and the number of words of that frequency.
 
 novle:
 
