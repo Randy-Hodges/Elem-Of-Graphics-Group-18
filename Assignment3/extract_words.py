@@ -1,19 +1,19 @@
 import re
 
 def openfile():
-    file = open("mytext.txt", "r")
+    file = open("TheProjectGutenbergeBookofTheTime.txt", "r")
     pattern = '[a-z]+'
     allTextArray = []
     uniqueWordsArray = []
     
     # create files
     allText = open("allwords.txt", "x")
-    uniqueWords = open("uniquewords.txt" , "x")
+    uniqueWordsTxt = open("uniquewords.txt" , "x")
     wordFrequency = open("wordfrequency.txt", "x")
 
     # write in files
     allText = open("allwords.txt", "w")
-    uniqueWords = open("uniquewords.txt" , "w")
+    uniqueWordsTxt = open("uniquewords.txt" , "w")
     wordFrequency = open("wordfrequency.txt", "w")
 
     for singleLine in file:
@@ -27,30 +27,33 @@ def openfile():
             allText.writelines("\n")
     
     # get dictionary of frequencies of words
-    allTextSet = set(allTextArray)
+    wordSet = set(allTextArray)
     allTextDict = {}
 
-    for wordSet in allTextSet:
-        for wordArray in allTextArray:
-            if wordSet == wordArray:
-                if wordSet in allTextDict:
-                    allTextDict[wordSet] = allTextDict[wordSet] + 1
+    # Creating allTextDict (contains frequency)
+    for word in wordSet:
+        for wordArray in allTextArray: 
+            if word == wordArray:
+                if word in allTextDict:
+                    allTextDict[word] = allTextDict[word] + 1
                 else :
-                    allTextDict[wordSet] = 1
+                    allTextDict[word] = 1
     
     # unique words
     for key, value in allTextDict.items():
-        if 1 == value:
+        if value == 1:
             uniqueWordsArray.append(key)
-            uniqueWords.writelines(key)
-            uniqueWords.writelines("\n")
+            uniqueWordsTxt.writelines(key)
+            uniqueWordsTxt.writelines("\n")
 
     # frequencies of words
     frequencyDict = {}
-    for i in range(len(allTextDict)):
-        
-        wordFreq = list(allTextDict.values())[i]
 
+    # for word in allTextArray:
+
+
+    for i in range(len(allTextDict)):
+        wordFreq = list(allTextDict.values())[i]
         if wordFreq in frequencyDict:
             frequencyDict[wordFreq] += 1
         else:

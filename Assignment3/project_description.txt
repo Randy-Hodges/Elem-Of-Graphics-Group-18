@@ -1,0 +1,13 @@
+A project description text file, assignment3_description.txt, that tells us what functionalities you've implemented, other interesting features or 
+extra credit within the program, software it relies on that you didn't write, and issues you encountered if there are unresolved problems. This will 
+also include documentation of which group member worked on which part of the assignment. While group coding is allowed, each member is responsible for 
+individual parts -- this ensures all group members are participating and have mastery of the assignment.
+
+
+Extract Words:
+
+
+novle:
+
+wordfrequency:
+
