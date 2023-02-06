@@ -9,7 +9,11 @@ Hannah wrote part of the extract_words.py file. She wrote the code to generate t
 Under the #unique words comment, the code takes the dictionary and finds values equal to 1 (meaning the words that show up once) writes it into the uniquewords.txt file.
 Under the # frequencies of words comment, the code creates a counter for the frequencies of words and the number of words of that frequency.
 
-novle:
+Online Word Cloud:
 
-wordfrequency:
+a3_novelvisualization:
+
+a3_wordfrequency:
+
+
 
