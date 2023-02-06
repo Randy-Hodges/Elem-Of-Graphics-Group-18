@@ -12,6 +12,7 @@ Under the # frequencies of words comment, the code creates a counter for the fre
 TheProjectGutenbergeBookofTheTime_wordcloud.png:
 Using the online word cloud generator, Hannah uploaded the allwords.txt file and created the word cloud and asked for our groups input!
 We used a color palette on coolors.co and also edited the three different fonts we used to Saira, PT Mono, and Alata.
+The shape of the cloud is a person reading a book.
 
 a3_novelvisualization:
 
