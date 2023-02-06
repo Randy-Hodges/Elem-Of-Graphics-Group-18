@@ -32,7 +32,7 @@ void setup(){
   smallFont = createFont("RocGrotesk-CondensedLight", 30);
   
   // reads in the word/frequency data
-  String[] data = loadStrings("word_frequency.txt");
+  String[] data = loadStrings("wordfrequency.txt");
   read(data);
   
   // places the graph

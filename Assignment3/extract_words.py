@@ -1,22 +1,17 @@
 import re
 
 def openfile():
-    file = open("TheProjectGutenbergeBookofTheTime.txt", "r")
+    file = open("Assignment3/TheProjectGutenbergeBookofTheTime.txt",  encoding="utf8")
     pattern = '[a-z]+'
     allTextArray = []
     uniqueWordsArray = []
-    
-    # create files
-    allText = open("allwords.txt", "x")
-    uniqueWordsTxt = open("uniquewords.txt" , "x")
-    wordFrequency = open("wordfrequency.txt", "x")
 
     # write in files
-    allText = open("allwords.txt", "w")
-    uniqueWordsTxt = open("uniquewords.txt" , "w")
-    wordFrequency = open("wordfrequency.txt", "w")
+    allText = open("Assignment3/allwords.txt", "w")
+    uniqueWordsTxt = open("Assignment3/a3_novelvisualization/uniquewords.txt" , "w")
+    wordFrequency = open("Assignment3/a3_wordfrequency/wordfrequency.txt", "w")
 
-    for singleLine in file:
+    for singleLine in file.readlines():
         singleLine = singleLine.replace("'","")
         singleLine = singleLine.lower()
         resultingLine = (re.findall(pattern, singleLine))
@@ -63,9 +58,7 @@ def openfile():
     finalDict = dict(sortedFrequencyDict)
     
     for key, value in finalDict.items():
-        wordFrequency.write('%s:%s\n' % (key, value))
-        wordFrequency.writelines("\n")
-
+        wordFrequency.write('%s: %s\n' % (key, value))
     
 
 if __name__ == "__main__":

@@ -64,8 +64,8 @@ void draw(){
 }
 
 void selectTextColor(String word){
-    int small_thresh = 4;
-    int med_thresh = 6;
+    int small_thresh = 5;
+    int med_thresh = 7;
     color pink = color(250, 13, 235);
     color yellow = color(245, 250, 13);
     color teal = color(13, 232, 250);
