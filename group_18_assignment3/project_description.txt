@@ -28,7 +28,10 @@ would show up roughly 1/3 of the time. Additionally, this code uses an arraylist
 words.
 
 -- a3_wordfrequency:
-Taylor created a dot graph to represent the word frequency data from The Time Machine. The x-axis represents the frequency data (shortened to "uses") and the y-axis represents the word data. One important decision in the design of the visualization was color. Pink and yellow were used against a dark purple background to help the information stand out. Yellow was used to represent frequency data, and pink was used to represent word data. One can see the data represented in each point by using the LEFT and RIGHT arrows to navigate through the graph—when the user visits a point, the point is highlighted white.
+Taylor created a dot graph to represent the word frequency data from The Time Machine. The x-axis represents the frequency data (shortened to "uses") and the y-axis 
+represents the word data. One important decision in the design of the visualization was color. Pink and yellow were used against a dark purple background to help the 
+information stand out. Yellow was used to represent frequency data, and pink was used to represent word data. One can see the data represented in each point by using 
+the LEFT and RIGHT arrows to navigate through the graph—when the user visits a point, the point is highlighted white.
 
 
 
