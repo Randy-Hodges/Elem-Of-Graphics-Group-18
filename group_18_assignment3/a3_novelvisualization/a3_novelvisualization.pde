@@ -21,7 +21,7 @@ void setup(){
     size(700, 600);
     background(80);
     // Adding Font
-    font = createFont("Courier", font_size);
+    font = createFont("BeautyMountainsPersonalUse-od7z.ttf", font_size);
     textFont(font, font_size);
     // Loading Words
     words = loadStrings("uniquewords.txt");
@@ -31,7 +31,7 @@ void setup(){
     }
     int max_lines = (int) (height/(font_size + spacing));
     int line_count = 0;
-    int cur_width = 0;
+    int cur_width = spacing;
     // Adding randomized text to screen
     while (true){
         if (available_words.size() == 0){
@@ -45,7 +45,7 @@ void setup(){
         float word_width = textWidth(word);
         float future_text_width = cur_width + word_width + spacing;
         if (future_text_width > width){
-            cur_width = 0;
+            cur_width = spacing;
             line_count += 1;
             if (line_count >= max_lines){
                 break;
@@ -64,8 +64,8 @@ void draw(){
 }
 
 void selectTextColor(String word){
-    int small_thresh = 5;
-    int med_thresh = 7;
+    int small_thresh = 6;
+    int med_thresh = 8;
     color pink = color(250, 13, 235);
     color yellow = color(245, 250, 13);
     color teal = color(13, 232, 250);

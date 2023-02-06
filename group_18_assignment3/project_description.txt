@@ -4,7 +4,7 @@ also include documentation of which group member worked on which part of the ass
 individual parts -- this ensures all group members are participating and have mastery of the assignment.
 
 
-extract_words.py:
+-- extract_words.py:
 Salomone wrote the first part of the extract_words.py file. They helped with providing the code by creating text files and writing in them, by 
 turning the book into alltext.txt, making a dictionary and keeping count for word frequency. Hannah then adapted it and inserted it and worked 
 on the second half. They also helped with some debugging and working out the logic.
@@ -18,9 +18,17 @@ Using the online word cloud generator, Hannah uploaded the allwords.txt file and
 We used a color palette on coolors.co and also edited the three different fonts we used to Saira, PT Mono, and Alata.
 The shape of the cloud is a person reading a book.
 
-a3_novelvisualization:
 
-a3_wordfrequency:
+-- a3_novelvisualization:
+Randy (james) wrote this code which visualizes random unique words in the novel. This visualization included several choices. One choice was the font, which we chose
+because it looked nice and was somewhat legible. For font size, we chose a size that kept the visualization readable but could also filled the screen with a 
+reasonable amount of words. Lastly for color choice, we chose to use a color triad scheme with teal, pink, and yellow as our colors because the contrasting colors 
+looked nice. We determined that a convineint way to choose these colors was to use the words length. We set threshold lengths of words so that each of the colors 
+would show up roughly 1/3 of the time. Additionally, this code uses an arraylist (an array that can change size) which is convineint for displaying random, non-repeating 
+words.
+
+-- a3_wordfrequency:
+Taylor
 
 
 
