@@ -5,11 +5,13 @@ individual parts -- this ensures all group members are participating and have ma
 
 
 extract_words.py:
+Salomone wrote the first part of the extract_words.py file. They helped with providing the code by creating text files and writing in them, by 
+turning the book into alltext.txt, making a dictionary and keeping count for word frequency. Hannah then adapted it and inserted it and worked 
+on the second half. They also helped with some debugging and working out the logic.
+
 Hannah wrote part of the extract_words.py file. She wrote the code to generate the uniquewords.txt file and the wordfrequency.txt file.
 Under the #unique words comment, the code takes the dictionary and finds values equal to 1 (meaning the words that show up once) writes it into the uniquewords.txt file.
 Under the # frequencies of words comment, the code creates a counter for the frequencies of words and the number of words of that frequency.
-
-Salomone wrote the first part of the extract_words.py file. They helped with providing the code by creating text files and writing in them, by turning the book into alltext.txt, making a dictionary and keeping count for word frequency. Hannah then adapted it and inserted it and worked on the second half. They also helped with some debugging and working out the logic.
 
 TheProjectGutenbergeBookofTheTime_wordcloud.png:
 Using the online word cloud generator, Hannah uploaded the allwords.txt file and created the word cloud and asked for our groups input!
