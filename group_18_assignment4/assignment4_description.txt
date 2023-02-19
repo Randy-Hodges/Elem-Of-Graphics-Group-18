@@ -1,0 +1,25 @@
+A project description text file, assignment4_description.txt, that summarizes what the intended animation was, what the included classes do, 
+and any unexpected challenges. That is, this is mostly a rehash of the progress report but from the position of what you accomplished rather 
+than what you were planning. Also document which group member worked on which part of the assignment. While group coding is allowed, each
+ member is responsible for their individual parts -- this ensures all group members are participating and have mastery of the assignment.
+
+
+Overview:
+Our project created a scene of cars moving through a city. In our scene there are Cars, Buildings, Birds, and Suns. 
+
+
+Buildings (Randy):
+The intended animation that I was going for was buildings moving across the screen. I used two classes to achieve this- a Building class and a 
+Window class. The Building class contains code for the building's body, checking if the building is on screen, and managing Windows. The Window
+class contains code for rotating the windows, moving them, and displaying them. One challenge that I faced was that I had originally planned on 
+scaling the buildings to meet the project requirements, but I figured that might get messy when trying to keep buildings next to one another, 
+so instead I rotated the windows to meet the project requirements.  
+
+
+Cars (Taylor):
+
+
+Suns (Hannah):
+
+
+Birds (Salamone)

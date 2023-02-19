@@ -50,6 +50,7 @@ class Building {
     }
 
     void createWindows(){
+        // Fills out the windows[] array with new instances of Windows
         int[] windowSizes = {4, 9, 16};
         int num_windows = windowSizes[(int)random(windowSizes.length)];
         windows = new Window[num_windows];
@@ -63,10 +64,10 @@ class Building {
             float y = buffery + (int)(i/width)*yspacing;
             windows[i] = (new Window(x, y, bwidth, bheight, pos, xvel, num_windows, this));
         }
-        createSpinners();
+        assignSpinners();
     }
 
-    void createSpinners(){
+    void assignSpinners(){
         for (int i = 0; i < max_num_spinners; i++){
             assignNewSpinner();
         }
