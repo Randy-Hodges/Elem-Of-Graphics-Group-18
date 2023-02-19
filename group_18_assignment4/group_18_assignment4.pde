@@ -21,7 +21,7 @@ void setup(){
 }
 
 void draw(){
-    background(100);
+    background(215, 234, 249);
     updateBuildings();
     road();
     updateCars();
@@ -36,7 +36,7 @@ void createCars(){
     car2 = new Car(400, 800, 300, #7AC9D8);
     car3 = new Car(800, 800, 300, #5F6464);
     car4 = new Car(200, 900, 400, #f1d700);
-    // carHorn = new SoundFile(this, "mixkit-small-car-horn-717.wav");
+    // carHorn = new SoundFile(this, "audio/mixkit-small-car-horn-717.wav");
 }
 
 void updateBuildings(){
