@@ -1,11 +1,12 @@
 /*
 
 */
-import processing.sound.*;
+import processing.sound.*; // make sure you first download the Processing Sound library
 SoundFile carHorn; // "Small car horn" from mixkit.co
 
 ArrayList<Building> buildings = new ArrayList<Building>();
 
+// car objects
 Car car1;
 Car car2;
 Car car3;
