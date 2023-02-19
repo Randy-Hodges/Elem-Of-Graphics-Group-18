@@ -1,11 +1,24 @@
 /*
 
 */
+import processing.sound.*;
+SoundFile carHorn; // "Small car horn" from mixkit.co
+
 ArrayList<Building> buildings = new ArrayList<Building>();
+
+Car car1;
+Car car2;
+Car car3;
+Car car4;
 
 void setup(){
     size(1000, 1000);
     buildings.add(new Building());
+    car1 = new Car(100, 800, 300, #F55E5E);
+    car2 = new Car(400, 800, 300, #7AC9D8);
+    car3 = new Car(800, 800, 300, #5F6464);
+    car4 = new Car(200, 900, 400, #f1d700);
+    carHorn = new SoundFile(this, "mixkit-small-car-horn-717.wav");
 
 }
 
@@ -74,4 +87,10 @@ void road(){
   fill(255);
   rect(0, 850, width, 10);
   rect(0, 870, width, 10);
+}
+
+void mousePressed(){
+  // honk horn by pressing mouse
+  carHorn.play();
+  carHorn.amp(.5);
 }
