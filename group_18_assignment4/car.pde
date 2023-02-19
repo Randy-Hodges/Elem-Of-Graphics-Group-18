@@ -1,6 +1,6 @@
 class Wheel{
   // loads the wheel illustration
-  PShape wheelSvg = loadShape("wheel.svg");
+  PShape wheelSvg = loadShape("images/wheel.svg");
   float d;
   float x;
   float y;
@@ -31,9 +31,9 @@ class Wheel{
 class Car extends Wheel{
   
   // loads car body images
-  PShape body = loadShape("Car Body.svg");
-  PShape details = loadShape("Car Body details.svg");
-  PShape metal = loadShape("Car Body metal.svg");
+  PShape body = loadShape("images/Car Body.svg");
+  PShape details = loadShape("images/Car Body details.svg");
+  PShape metal = loadShape("images/Car Body metal.svg");
   float w; // car width
   
   // for the drive method

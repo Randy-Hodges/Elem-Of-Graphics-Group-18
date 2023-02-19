@@ -17,7 +17,7 @@ class Building {
         bheight = heights[(int)random(heights.length)];
         xvel = -2;  
         bcolor = colors[(int)random(colors.length)];
-        pos =  new PVector(1000, 800 - bheight);
+        pos = new PVector(1000, 800 - bheight);
         max_num_spinners = (int) random(1, 4);
         createWindows();
     }
@@ -29,8 +29,13 @@ class Building {
     }
 
     void display(){
-        fill(bcolor);
+        // Outer frame
+        fill(30);
         rect(pos.x, pos.y, bwidth, bheight);
+        // Inner body
+        int border = 10;
+        fill(bcolor);
+        rect(pos.x + border/2, pos.y + border/2, bwidth - border, bheight - border);
         updateWindows();
     }
 

@@ -28,8 +28,25 @@ class Window {
     }
 
     void display(){
-        fill(wcolor);
+        // Frame
+        float border = 6.0;
+        fill(200);
         rect(pos.x, pos.y, wwidth, wheight);
+        // Body
+        fill(wcolor);
+        rect(pos.x + border/2, pos.y + border/2, wwidth - border, wheight - border);
+    }
+
+    void display(float x, float y){
+        rectMode(CENTER);
+        // Frame
+        float border = 6.0;
+        fill(200);
+        rect(x, y, wwidth, wheight);
+        // Body
+        fill(wcolor);
+        rect(x, y, wwidth - border, wheight - border);
+        rectMode(CORNER);
     }
 
     void spin(){
@@ -38,10 +55,7 @@ class Window {
         translate(pos.x + wwidth/2, pos.y + wheight/2);
         cur_angle += d_angle;
         rotate(cur_angle);
-        rectMode(CENTER);
-        fill(wcolor);
-        rect(0, 0, wwidth, wheight);
-        rectMode(CORNER);
+        display(0, 0);
         popMatrix();
         if (cur_angle >= PI){
             cur_angle = 0;

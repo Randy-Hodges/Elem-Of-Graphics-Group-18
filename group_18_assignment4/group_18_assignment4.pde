@@ -1,12 +1,13 @@
 /*
 
 */
-import processing.sound.*; // make sure you first download the Processing Sound library
-SoundFile carHorn; // "Small car horn" from mixkit.co
+// import processing.sound.*; // make sure you first download the Processing Sound library
 
+// Buildings
 ArrayList<Building> buildings = new ArrayList<Building>();
 
-// car objects
+// Cars
+// SoundFile carHorn; // "Small car horn" from mixkit.co
 Car car1;
 Car car2;
 Car car3;
@@ -14,12 +15,8 @@ Car car4;
 
 void setup(){
     size(1000, 1000);
-    buildings.add(new Building());
-    car1 = new Car(100, 800, 300, #F55E5E);
-    car2 = new Car(400, 800, 300, #7AC9D8);
-    car3 = new Car(800, 800, 300, #5F6464);
-    car4 = new Car(200, 900, 400, #f1d700);
-    carHorn = new SoundFile(this, "mixkit-small-car-horn-717.wav");
+    createBuildings();
+    createCars();
 
 }
 
@@ -28,6 +25,18 @@ void draw(){
     updateBuildings();
     road();
     updateCars();
+}
+
+void createBuildings(){
+    buildings.add(new Building());
+}
+
+void createCars(){
+    car1 = new Car(100, 800, 300, #F55E5E);
+    car2 = new Car(400, 800, 300, #7AC9D8);
+    car3 = new Car(800, 800, 300, #5F6464);
+    car4 = new Car(200, 900, 400, #f1d700);
+    // carHorn = new SoundFile(this, "mixkit-small-car-horn-717.wav");
 }
 
 void updateBuildings(){
@@ -92,6 +101,6 @@ void road(){
 
 void mousePressed(){
   // honk horn by pressing mouse
-  carHorn.play();
-  carHorn.amp(.5);
+//   carHorn.play();
+//   carHorn.amp(.5);
 }
