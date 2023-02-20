@@ -13,8 +13,14 @@ Car car2;
 Car car3;
 Car car4;
 
+// Suns
+Sun sun;
+Rays rays;
+
 void setup(){
     size(1000, 1000);
+    smooth();
+    createSuns();
     createBuildings();
     createCars();
 
@@ -22,9 +28,11 @@ void setup(){
 
 void draw(){
     background(215, 234, 249);
+    updateSuns();
     updateBuildings();
     road();
     updateCars();
+
 }
 
 void createBuildings(){
@@ -37,6 +45,20 @@ void createCars(){
     car3 = new Car(800, 800, 300, #5F6464);
     car4 = new Car(200, 900, 400, #f1d700);
     // carHorn = new SoundFile(this, "audio/mixkit-small-car-horn-717.wav");
+}
+
+void createSuns(){
+    sun = new Sun(-100, 500, 100, 1);
+    sun.startX = -100;
+    sun.startY = 500;
+    sun.radius = 100;
+    
+    rays = new Rays (-100, 500, 1, 10, -100);
+    rays.startX = 0;
+    rays.startY = 80;
+    rays.angle = 0;
+    rays.rect_width = 10;
+    rays.translateX = -100;
 }
 
 void updateBuildings(){
@@ -89,6 +111,19 @@ void updateCars(){
   car2.drive(3, 1);
   car3.drive(3, 1);
   car4.drive(0, 1);
+}
+
+void updateSuns(){
+    pushMatrix();
+    translate(width/2, height/2);
+    fill(0);
+    ellipse(0, 0, 1, 1);
+    background(215, 234, 249);
+    pushMatrix();
+    sun.display();
+    rays.display();
+    popMatrix();
+    popMatrix();
 }
 
 void road(){
