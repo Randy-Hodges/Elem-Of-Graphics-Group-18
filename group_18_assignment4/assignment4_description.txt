@@ -20,6 +20,7 @@ Cars (Taylor):
 
 
 Suns (Hannah):
+For the animation for the suns, I implemented a sun class that creates the sun ball and a rays class that draws rays that rotate around the sun. 
 
 
 Birds (Salamone):
