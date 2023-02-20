@@ -20,7 +20,7 @@ Cars (Taylor):
 
 
 Suns (Hannah):
-For the animation for the suns, I implemented a sun class that creates the sun ball and a rays class that draws rays that rotate around the sun. 
+For the animation for the suns, I implemented a sun class that draws a sun ball and a rays class that draws rays that rotate around the sun. The sun moves across the screen, shrinks in size, and also changes its color from yellow to orange-red as it "sets" behind the building. An unexpected challenge was implememting my draw functions into the rest of the group's call functions. One other challenge was reimplimenting my function because I wanted to import a PShape image, but since I wanted to implement a color change into my class, I had to switch from my PShape image to the ellipse() and rect() functions. 
 
 
 Birds (Salamone):
