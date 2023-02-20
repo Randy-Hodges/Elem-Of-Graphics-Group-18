@@ -1,29 +1,28 @@
 class Sun{
- float startX, endX, startY, endY, radius, speed, angle;
+ float startX, startY, radius, angle;
  color start_color, end_color;
 
- Sun(float startX, float endX, float startY, float endY, float radius, float speed, float angle){
+ Sun(float startX, float startY, float radius, float angle){
    this.startX = startX;
-   this.endX = endX;
    this.startY = startY;
-   this.endY = endY;
    this.radius = radius;
-   this.speed = speed;
    this.angle = angle;
    start_color = color(255, 200, 63);
    end_color = color(255, 72, 0);
  }
  
   void display(){
-    background(255);
+    background(215, 234, 249);
     ellipseMode(CENTER);
-    
     // sun moves around center point
      rotate(angle);
      translate(50,0);
-     fill(lerpColor(start_color, end_color, (millis()%9000)/9000.0) );
+     fill(lerpColor(start_color, end_color, (millis()%6000)/6000.0) );
      noStroke();
      ellipse(startX, startY, radius, radius);
      angle += 0.01;
+     if (radius > 0){
+     radius = radius - 0.1;
+     }
  }
 }
