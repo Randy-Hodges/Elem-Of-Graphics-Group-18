@@ -17,22 +17,28 @@ Car car4;
 Sun sun;
 Rays rays;
 
+// Birds
+Bird pajaro;
+Bird pajaro2;
+float time; 
+
+
 void setup(){
     size(1000, 1000);
     smooth();
     createSuns();
     createBuildings();
     createCars();
-
+    createBirds();
 }
 
 void draw(){
-    background(215, 234, 249);
+    background(132, 190, 229);
     updateSuns();
     updateBuildings();
     road();
     updateCars();
-
+    updateBirds();
 }
 
 void createBuildings(){
@@ -53,12 +59,18 @@ void createSuns(){
     sun.startY = 500;
     sun.radius = 100;
     
-    rays = new Rays (-100, 500, 1, 10, -100);
+    rays = new Rays(-100, 500, 1, 10, -100);
     rays.startX = 0;
     rays.startY = 80;
     rays.angle = 0;
     rays.rect_width = 10;
     rays.translateX = -100;
+}
+
+void createBirds(){
+    pajaro = new Bird(0.0, height*0.2, 50);
+    pajaro2 = new Bird(20, height*0.3, 30);
+    time = 0.0; 
 }
 
 void updateBuildings(){
@@ -118,12 +130,19 @@ void updateSuns(){
     translate(width/2, height/2);
     fill(0);
     ellipse(0, 0, 1, 1);
-    background(215, 234, 249);
     pushMatrix();
     sun.display();
     rays.display();
     popMatrix();
     popMatrix();
+}
+
+void updateBirds(){
+    pajaro.display();
+    pajaro2.display();
+    time += 1.0;
+    pajaro.move(time, width);
+    pajaro2.move(time, width); 
 }
 
 void road(){

@@ -60,7 +60,7 @@ class Car extends Wheel{
     sat = constrain(sat, 0, 100);
     hue = constrain(hue, 0, 360);
     this.acc_c = color(hue, sat-20, l + 70);
-    colorMode(RGB);
+    colorMode(RGB, 255);
   }
   
   // allows you to change the color of the car
@@ -74,7 +74,7 @@ class Car extends Wheel{
     sat = constrain(sat, 0, 100);
     hue = constrain(hue, 0, 360);
     this.acc_c = color(hue, sat-20, l + 70);
-    colorMode(RGB); 
+    colorMode(RGB, 255); 
   }
   
   // rotates wheels, and creates a loop of cars from left to right

@@ -23,7 +23,6 @@ void draw(){
     translate(width/2, height/2);
     fill(0);
     ellipse(0, 0, 1, 1);
-    background(215, 234, 249);
     pushMatrix();
     sun.display();
     rays.display();
