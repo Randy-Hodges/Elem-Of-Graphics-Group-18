@@ -21,17 +21,11 @@ class Bird {
   
   float movingWingVertexX;
   float movingWingVertexY;
-
   
-  
-  // speed 
-  float velocidad;
-  
-  Bird(float x, float y, float birdSize, float velocidad) {
+  Bird(float x, float y, float birdSize) {
     this.x = x;
     this.y = y;
     this.birdSize = birdSize;
-    this.velocidad = velocidad;
     this.movingWingVertexY = y - 2*birdSize/3;
     this.birdBodX = birdSize;
     this.birdBodY = 2*birdSize/3;
