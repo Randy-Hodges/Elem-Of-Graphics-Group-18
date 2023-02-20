@@ -33,7 +33,7 @@ class Bird {
   }
   
   void display() {
-    
+    stroke(2);
     fill(110, 198, 155);
     // bird wing back
     wingBackX = x + 0.35* birdBodX;
@@ -73,6 +73,7 @@ class Bird {
     triangle(headCenterX+0.25*headDiam, headCenterY+0.1*headDiam, 
              headCenterX+ 0.75*headDiam, headCenterY+0.1*headDiam, 
              headCenterX + 0.45*headDiam, headCenterY + headDiam*0.22);
+    noStroke();
   }
   
   void move(float time, float screenSize) {

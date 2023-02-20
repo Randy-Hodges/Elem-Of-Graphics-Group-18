@@ -15,7 +15,7 @@ Car car4;
 
 // Suns
 Sun sun;
-Rays rays;
+Sun sun2;
 
 // Birds
 Bird pajaro;
@@ -54,17 +54,8 @@ void createCars(){
 }
 
 void createSuns(){
-    sun = new Sun(-100, 500, 100, 1);
-    sun.startX = -100;
-    sun.startY = 500;
-    sun.radius = 100;
-    
-    rays = new Rays(-100, 500, 1, 10, -100);
-    rays.startX = 0;
-    rays.startY = 80;
-    rays.angle = 0;
-    rays.rect_width = 10;
-    rays.translateX = -100;
+    sun = new Sun(-100, 500, 70, 0);
+    sun2 = new Sun(-100, 500, 100, 1);
 }
 
 void createBirds(){
@@ -128,11 +119,9 @@ void updateCars(){
 void updateSuns(){
     pushMatrix();
     translate(width/2, height/2);
-    fill(0);
-    ellipse(0, 0, 1, 1);
     pushMatrix();
     sun.display();
-    rays.display();
+    sun2.display();
     popMatrix();
     popMatrix();
 }

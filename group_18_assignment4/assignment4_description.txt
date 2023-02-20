@@ -17,10 +17,29 @@ so instead I rotated the windows to meet the project requirements.
 
 
 Cars (Taylor):
+The Car that I designed varies significantly from the original plan I laid out in the progress report. The dominant class is the Wheel class 
+(rather than the car class), and the subclass is the Car class, which is drawn based on the x and y position of the front wheel. The Wheel class 
+accepts an X-position, a Y-position, and a diameter (d). It imports the wheel image SVG that I created in illustrator (the origin is the center).
+ The Wheel class uses the roll() methods, which allows the wheels to rotate according to the input speed, and the direction input (1 or -1). 
+
+The Car Subclass constructor takes an X and Y position, a desired width (w), and a color. It imports three SVG files—a file for the body of the 
+car, for the details of the car, and for the windows/metal components of the car. These are separated so that the color argument can be applied 
+to the body and details of the car without affecting the color of the windows/metal components—the color of the car can either be input in the 
+Car constructor, or in the changeColor() method. The Car class uses the inherited Wheel constructor to construct a front wheel from the x, y, 
+and (fractioned) w inputs. The Car subclass then uses the drive() method to combine the Wheel’s roll() method with the translation of the whole 
+car. The display() method then applies the color argument to the body of the car, and displays the Wheel twice to complete the car’s animation. 
 
 
 Suns (Hannah):
-For the animation for the suns, I implemented a sun class that creates the sun ball and a rays class that draws rays that rotate around the sun. 
+For the animation for the suns, I implemented a sun class that draws a sun ball and a rays class that draws rays that rotate around the sun. 
+The sun moves across the screen, shrinks in size, and also changes its color from yellow to orange-red as it "sets" behind the building. An 
+unexpected challenge was implememting my draw functions into the rest of the group's call functions. One other challenge was reimplimenting 
+my function because I wanted to import a PShape image, but since I wanted to implement a color change into my class, I had to switch from my 
+PShape image to the ellipse() and rect() functions. 
 
 
 Birds (Salamone):
+Salomone’s birds fly across the screen while flapping their wings. The wings flap on their own accord while the bird bobs up and down. You input 
+its starting location with the first two values, x and y respectively. and then for the next value you input the size of the bird. Void move in 
+the birds moves both the bird and the wings but the wings move separately from the body but still move forward together. The wings flap up and 
+down opposite of the bird bobbing up and down. I did end up making the birds flap and they can change size. They are also a pretty color.
