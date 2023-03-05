@@ -6,6 +6,9 @@ Rocket rocket2;
 // Spaceship
 SpaceMan Ship1;
 
+// Asteroid
+Asteroid ast1;
+
 // Your stuff Here
 
 
@@ -16,12 +19,14 @@ void setup(){
            0, 1, 0);
     createRockets();
     createSpaceMan();
+    createAsteroid();
 }
 
 void draw(){
     background(30);
     updateRockets();
     updateSpaceMan();
+    updateAsteroid();
 }
 
 void createRockets(){
@@ -43,4 +48,16 @@ void updateSpaceMan(){
     Ship1.drift(500);
     Ship1.roll();
     Ship1.display();
+    
+void createAsteroid(){
+  ast1 = new Asteroid(0, 450);
+}
+
+void updateAsteroid(){
+  pushMatrix();
+  ast1.displayAsteroid(30);
+   popMatrix();
+ 
+}
+    
 }
