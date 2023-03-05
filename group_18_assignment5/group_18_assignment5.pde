@@ -2,6 +2,10 @@
 // Rockets
 Rocket rocket1;
 Rocket rocket2;
+
+// Spaceship
+SpaceMan Ship1;
+
 // Your stuff Here
 
 
@@ -11,11 +15,13 @@ void setup(){
            width/2.0, height/2.0, 0,
            0, 1, 0);
     createRockets();
+    createSpaceMan();
 }
 
 void draw(){
     background(30);
     updateRockets();
+    updateSpaceMan();
 }
 
 void createRockets(){
@@ -26,4 +32,15 @@ void createRockets(){
 void updateRockets(){
     rocket1.update();
     rocket2.update();
+}
+
+void createSpaceMan(){
+    Ship1 = new SpaceMan(800, 900, 100, 150, 20); 
+}
+
+void updateSpaceMan(){
+    Ship1.bob(40, TWO_PI);
+    Ship1.drift(500);
+    Ship1.roll();
+    Ship1.display();
 }
