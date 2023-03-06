@@ -1,1 +1,11 @@
+A project description text file, assignment5_description.txt, that summarizes what the intended animation was, what the included classes do, and any unexpected challenges. That is, this is mostly a rehash of the progress report but from the position of what you accomplished rather than what you were planning. Also document which group member worked on which part of the assignment. While group coding is allowed, each member is responsible for their individual parts -- this ensures all group members are participating and have mastery of the assignment.
 
+Overview: 
+
+Class name (Randy):
+
+Class name (Taylor):
+
+Asteroid (Hannah):
+
+Class name (Salamone):
