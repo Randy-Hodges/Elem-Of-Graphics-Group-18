@@ -5,9 +5,14 @@ members are participating and have mastery of the assignment.
 
 Overview: 
 
-Class name (Randy):
+Rocket (Randy): The rocket class is responsible for the creation and maintaining of the rockets, while the monkey class creates and maintains the monkeys. Originally I 
+wanted to make a space monkey ride the rocket, but I could not find an appropriate obj file and thought learning Blender was outside the scope of the assignment. Instead 
+I found a monkey head. The rocket class contains a monkey in it, and the two work together. The rocket also points in the direction that it is moving (which happened to be
+more complicated than it initially sounds). Everything translates and rotates and instances differ in terms of where in its movement cycle it is initially placed as well as 
+monkey color.
 
-Class name (Taylor):
+
+Spaceship (Taylor):
 
 For our Space Scene, I implemented the SpaceShip class and SpaceMan Subclass at the bottom of the screen. The biggest challenge was the implementation of the OBJ. The SpaceMan obj was appearing as a grey 2d image, even with the lights() applied—it took a long while to understand it was the way I was scaling the obj. Perfecting the sine oscillations was also a a fun challenge—each slight adjustment drastically changed the movement of the SpaceMan in comparison to the SpaceShip.
 
@@ -17,14 +22,16 @@ SpaceShip Class:
   - The Spaceship class uses the SpaceShipSkin.png to give the Sphere the look of a spaceship.
 
 SpaceMan Class:
-- This class inherits the X-Position, Y-Position, Z-Position and height of the Space Ship. It also inherits the drift() and bob() methods of the SpaceShip Class.
-- The other argument for this class is the trail, which creates an offset in the position of the SpaceMan and the SpaceShip.
-- The methods include bob(), drift(), roll(), and display(). The bob() method inherits the super.bob() method and alters the vertical sine path of the SpaceMan. The drift() method inherits the super.drift() method and expands the horizontal drifting range of the SpaceMan.
-- The SpaceMan class an obj—SpaceManModel.obj.
+  - This class inherits the X-Position, Y-Position, Z-Position and height of the Space Ship. It also inherits the drift() and bob() methods of the SpaceShip Class.
+  - The other argument for this class is the trail, which creates an offset in the position of the SpaceMan and the SpaceShip.
+  - The methods include bob(), drift(), roll(), and display(). The bob() method inherits the super.bob() method and alters the vertical sine path of the SpaceMan. The drift() method inherits the super.drift() method and expands the horizontal drifting range of the SpaceMan.
+  - The SpaceMan class an obj—SpaceManModel.obj.
+
 
 Asteroid (Hannah): The animation that displays on screen is an asteroid that rotates while also translating across the screen. The asteroid also has 3 rocks that orbit
 around it while also translating with the asteroid. I only implemented one class, the asteroid class, that loads in the obj files of the asteroid and the 3 rocks and
 implements the transformations decribed above. I orginally intended to have a comet tail that would come off from behind the asteroid, however, I didn't think the comet
 tail would be appropriate for this scence as it would be drifting in space rather than hurling towards another celestial object. To still meet the requirement, I changed my animation hierarchy to the rocks floating around the asteroid instead!
 
-Class name (Salamone):
+
+Space Body (Salamone):
