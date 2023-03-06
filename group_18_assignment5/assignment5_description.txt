@@ -1,4 +1,7 @@
-A project description text file, assignment5_description.txt, that summarizes what the intended animation was, what the included classes do, and any unexpected challenges. That is, this is mostly a rehash of the progress report but from the position of what you accomplished rather than what you were planning. Also document which group member worked on which part of the assignment. While group coding is allowed, each member is responsible for their individual parts -- this ensures all group members are participating and have mastery of the assignment.
+A project description text file, assignment5_description.txt, that summarizes what the intended animation was, what the included classes do, and any unexpected
+challenges. That is, this is mostly a rehash of the progress report but from the position of what you accomplished rather than what you were planning. Also document 
+which group member worked on which part of the assignment. While group coding is allowed, each member is responsible for their individual parts -- this ensures all group
+members are participating and have mastery of the assignment.
 
 Overview: 
 
@@ -6,6 +9,9 @@ Class name (Randy):
 
 Class name (Taylor):
 
-Asteroid (Hannah): The animation that displays on screen is an asteroid that rotates while also translating across the screen. The asteroid also has 3 rocks that orbit around it while also translating with the asteroid. I only implemented one class, the asteroid class, that loads in the obj files of the asteroid and the 3 rocks and implements the transformations decribed above. I orginally intended to have a comet tail that would come off from behind the asteroid, however, I didn't think the comet tail would be appropriate for this scence as it would be drifting in space rather than hurling towards another celestial object. 
+Asteroid (Hannah): The animation that displays on screen is an asteroid that rotates while also translating across the screen. The asteroid also has 3 rocks that orbit
+around it while also translating with the asteroid. I only implemented one class, the asteroid class, that loads in the obj files of the asteroid and the 3 rocks and
+implements the transformations decribed above. I orginally intended to have a comet tail that would come off from behind the asteroid, however, I didn't think the comet
+tail would be appropriate for this scence as it would be drifting in space rather than hurling towards another celestial object. 
 
 Class name (Salamone):
