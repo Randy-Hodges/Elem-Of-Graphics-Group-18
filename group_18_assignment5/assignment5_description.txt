@@ -36,3 +36,4 @@ tail would be appropriate for this scence as it would be drifting in space rathe
 
 
 Space Body (Salamone):
+Salamone created the planet and the moon. Both are spheres that have a texture applied to them.
