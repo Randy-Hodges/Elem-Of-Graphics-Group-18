@@ -57,9 +57,10 @@ void updateSpaceMan(){
     Ship1.drift(500);
     Ship1.roll();
     Ship1.display();
+}
     
 void createAsteroid(){
-  ast1 = new Asteroid(0, 450);
+  ast1 = new Asteroid(0, 600);
 }
 
 void updateAsteroid(){
@@ -74,6 +75,4 @@ if (ast1.xpos > 1100 ){
 
 void updatePlanet() {
     earth.display();
-}
-    
 }
