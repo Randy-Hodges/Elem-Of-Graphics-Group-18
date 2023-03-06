@@ -1,12 +1,10 @@
-
+PImage bg;
 // Rockets
 Rocket rocket1;
 Rocket rocket2;
-float angle;
-PShape man;
 
 // Spaceship
-SpaceMan Ship1;
+SpaceMan ship1;
 
 // Asteroid
 Asteroid ast1;
@@ -15,39 +13,25 @@ Asteroid ast1;
 CenterSpaceBody earth;
 
 
-
 void setup(){
-    size(1000, 1000, P3D);
+    size(1001, 1001, P3D);
     camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 / 180.0),
            width/2.0, height/2.0, 0,
            0, 1, 0);
+    bg = loadImage("objects/SpaceBackground.jpeg");
     createPlanet();
     createRockets();
     createSpaceMan();
     createAsteroid();
-    man = loadShape("objects/space_man/SpaceManModel.obj");
 }
 
 void draw(){
-    background(30);
+    background(bg);
     addLights();
     updatePlanet();
     updateRockets();
     updateSpaceMan();
     updateAsteroid();
-    // dummyCode();
-}
-
-void dummyCode(){
-    angle += .01;
-    pushMatrix();
-    translate(width/2, height/2);
-    rotateY(angle);
-    scale(35);
-    shape(man, 0, 0, man.width, man.height);
-    popMatrix();
-    scale(1);
-
 }
 
 void addLights(){
@@ -55,7 +39,7 @@ void addLights(){
 }
 
 void createPlanet() {
-    earth = new CenterSpaceBody(int(width*0.63), -0.01, width*3, -height*2, -width*4);
+    earth = new CenterSpaceBody(int(width*0.7), -0.01, width/2, -height, -width*4);
 }
 
 void createRockets(){
@@ -69,14 +53,14 @@ void updateRockets(){
 }
 
 void createSpaceMan(){
-    Ship1 = new SpaceMan(800, 900, 100, 150, 20); 
+    ship1 = new SpaceMan(800, 900, 100, 150, 20); 
 }
 
 void updateSpaceMan(){
-    Ship1.bob(40, TWO_PI);
-    Ship1.drift(500);
-    Ship1.roll();
-    Ship1.display();
+    ship1.bob(40, TWO_PI);
+    ship1.drift(500);
+    ship1.roll();
+    ship1.display();
 }
     
 void createAsteroid(){
