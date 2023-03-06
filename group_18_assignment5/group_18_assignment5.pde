@@ -54,6 +54,9 @@ void createAsteroid(){
 }
 
 void updateAsteroid(){
+if (ast1.xpos > 1100 ){
+    ast1.xpos = -50;
+  }
   pushMatrix();
   ast1.displayAsteroid(30);
    popMatrix();
