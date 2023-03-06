@@ -23,7 +23,7 @@ class SpaceShip{
     
     noStroke();
     Ship = createShape(SPHERE, h);
-    ShipSkin = loadImage("SpaceShipSkin.png");
+    ShipSkin = loadImage("objects/space_man/SpaceShipSkin.png");
     Ship.setTexture(ShipSkin);
   }
   
@@ -46,7 +46,7 @@ class SpaceShip{
 
 class SpaceMan extends SpaceShip{
   
-  PShape Man;
+  PShape man;
   float trail;
   float turn = 0.0;
   float dir = 0.0;
@@ -56,7 +56,7 @@ class SpaceMan extends SpaceShip{
   
   SpaceMan(float x, float y, float z, float h, float trail){
     super(x, y, z, h);
-    Man = loadShape("SpaceManModel.obj"); 
+    man = loadShape("objects/space_man/SpaceManModel.obj"); 
     this.trail = trail;
     follow_x = x + trail;
     follow_y = y;
@@ -116,7 +116,7 @@ class SpaceMan extends SpaceShip{
     
     rotate(turn);
     rotateZ(PI);
-    shape(Man, 0, 0, 75, 100);
+    shape(man, 0, 0, 75, 100);
     
     popMatrix();
     popMatrix();

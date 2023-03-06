@@ -12,7 +12,7 @@ class Monkey{
     color[] colors = {gold, brown, orange, gray};
 
     Monkey(){
-        monkey = loadShape("rocket_objects/monkey.obj");
+        monkey = loadShape("objects/rocket_objects/monkey.obj");
         monkey.setFill(colors[(int)random(colors.length)]);
         angle = random(0, TWO_PI);
     }

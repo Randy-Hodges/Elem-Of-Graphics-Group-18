@@ -13,7 +13,7 @@ class Rocket{
     float height_range = 200*height_buffer;
     float min_y = 300 + 200*(1-height_buffer)/2;
     Rocket(){
-        rocket = loadShape("rocket_objects/Toy_Rocket.obj");
+        rocket = loadShape("objects/rocket_objects/Toy_Rocket.obj");
         monkey = new Monkey();
         pos = new PVector();
         last_pos = new PVector();

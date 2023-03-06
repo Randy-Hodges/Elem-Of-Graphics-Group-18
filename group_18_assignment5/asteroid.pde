@@ -1,14 +1,14 @@
 class Asteroid{
   
   // load obj
-  PShape asteroid = loadShape("Asteroid.obj");
+  PShape asteroid = loadShape("objects/data/Asteroid.obj");
   float theta, theta2, theta3, scale;
   float xpos, ypos;
   
   // rocks
-  PShape rock1 = loadShape("rock1.obj");
-  PShape rock2 = loadShape("rock2.obj");
-  PShape rock3 = loadShape("rock3.obj");
+  PShape rock1 = loadShape("objects/data/rock1.obj");
+  PShape rock2 = loadShape("objects/data/rock2.obj");
+  PShape rock3 = loadShape("objects/data/rock3.obj");
   
   Asteroid(float xpos, float ypos){
   this.xpos = xpos; // x position

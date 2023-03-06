@@ -19,7 +19,7 @@ class SpaceBody {
     this.x = width/2;
     this.y = height/2;
     this.z = 0;
-    this.tex = loadImage("moonHighDef.jpeg");
+    this.tex = loadImage("objects/world/moonHighDef.jpeg");
     this.radius = radius;
     this.ball = createShape(SPHERE, radius);
     ball.setTexture(tex);
@@ -32,7 +32,7 @@ class SpaceBody {
     this.x = x;
     this.y = y;
     this.z = z;
-    this.tex = loadImage("moonHighDef.jpeg");
+    this.tex = loadImage("objects/world/moonHighDef.jpeg");
     this.radius = radius;
     this.ball = createShape(SPHERE, radius);
     this.ball.setTexture(tex);
@@ -80,7 +80,7 @@ class CenterSpaceBody {
     this.x = x;
     this.y = y;
     this.z = z;
-    this.tex = loadImage("worldEarthTexture.jpeg");
+    this.tex = loadImage("objects/world/worldEarthTexture.jpeg");
     this.radius = radius;
     this.centerSphere = createShape(SPHERE, radius);
     centerSphere.setTexture(tex);
