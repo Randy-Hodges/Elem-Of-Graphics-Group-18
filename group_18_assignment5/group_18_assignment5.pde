@@ -2,6 +2,8 @@
 // Rockets
 Rocket rocket1;
 Rocket rocket2;
+float angle;
+PShape man;
 
 // Spaceship
 SpaceMan Ship1;
@@ -12,7 +14,6 @@ Asteroid ast1;
 // Planet
 CenterSpaceBody earth;
 
-// Your stuff Here
 
 
 void setup(){
@@ -24,6 +25,7 @@ void setup(){
     createRockets();
     createSpaceMan();
     createAsteroid();
+    man = loadShape("objects/space_man/SpaceManModel.obj");
 }
 
 void draw(){
@@ -33,6 +35,19 @@ void draw(){
     updateRockets();
     updateSpaceMan();
     updateAsteroid();
+    // dummyCode();
+}
+
+void dummyCode(){
+    angle += .01;
+    pushMatrix();
+    translate(width/2, height/2);
+    rotateY(angle);
+    scale(35);
+    shape(man, 0, 0, man.width, man.height);
+    popMatrix();
+    scale(1);
+
 }
 
 void addLights(){

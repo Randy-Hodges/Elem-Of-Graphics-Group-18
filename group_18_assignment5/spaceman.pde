@@ -116,8 +116,9 @@ class SpaceMan extends SpaceShip{
     
     rotate(turn);
     rotateZ(PI);
-    shape(man, 0, 0, 75, 100);
-    
+    scale(35);
+    shape(man, 0, 0, man.width, man.height);
+    scale(1);
     popMatrix();
     popMatrix();
   }
