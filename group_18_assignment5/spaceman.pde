@@ -65,7 +65,6 @@ class SpaceMan extends SpaceShip{
   
   void drift(float range){
     super.drift(range);
-    println(this.range);
     
     follow_x = (this.range)*sin((PI/2) + osc_x) + trail;
     osc_x += .001*PI; 
