@@ -21,6 +21,7 @@ class SpaceShip{
     origin_y = y;
     this.h = h;
     
+    // uploads the skin and creates main model for the spaceship
     noStroke();
     Ship = createShape(SPHERE, h);
     ShipSkin = loadImage("objects/space_man/SpaceShipSkin.png");
@@ -56,6 +57,8 @@ class SpaceMan extends SpaceShip{
   
   SpaceMan(float x, float y, float z, float h, float trail){
     super(x, y, z, h);
+    
+    // uploads space man OBJ
     man = loadShape("objects/space_man/SpaceManModel.obj"); 
     this.trail = trail;
     follow_x = x + trail;
@@ -64,18 +67,20 @@ class SpaceMan extends SpaceShip{
   }
   
   void drift(float range){
+    // horizontal oscillation of the spaceman
     super.drift(range);
-    
     follow_x = (this.range)*sin((PI/2) + osc_x) + trail;
     osc_x += .001*PI; 
   }
   
   void bob(float max, float start){
+    // vertical oscillation of the spaceman
     super.bob(max, start);  
     follow_y = (.75*max)*sin((this.start - PI/2) + osc_y/1.25) - h;
   }
   
   void roll(){
+    // oscillates the rotation of the spaceman
     float change = 1;
     turn += sin(PI*.008) * sin(PI*dir*change);
     dir += .001;
@@ -86,6 +91,7 @@ class SpaceMan extends SpaceShip{
     fill(#4DF0F5, 50);
     stroke(#4DF0F5);
     
+    // creates the beam
     beginShape(TRIANGLES);
     vertex(x, y - h/2, z);
     vertex( follow_x + x, follow_y + y, follow_z - 1);
@@ -107,13 +113,14 @@ class SpaceMan extends SpaceShip{
   
     noStroke();
     
+    // places the ship
     pushMatrix();
     translate(x, y, z);
     shape(Ship, 0, 0, h, h);
     
+     // places the space man
     pushMatrix();
     translate(follow_x, follow_y, follow_z - z);
-    
     rotate(turn);
     rotateZ(PI);
     scale(35);
