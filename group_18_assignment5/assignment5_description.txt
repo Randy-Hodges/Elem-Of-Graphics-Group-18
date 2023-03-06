@@ -3,13 +3,14 @@ challenges. That is, this is mostly a rehash of the progress report but from the
 which group member worked on which part of the assignment. While group coding is allowed, each member is responsible for their individual parts -- this ensures all group
 members are participating and have mastery of the assignment.
 
-Overview: 
+Overview: Our code presents a space environment with the following objects/classes:
+
 
 Rocket (Randy): The rocket class is responsible for the creation and maintaining of the rockets, while the monkey class creates and maintains the monkeys. Originally I 
 wanted to make a space monkey ride the rocket, but I could not find an appropriate obj file and thought learning Blender was outside the scope of the assignment. Instead 
 I found a monkey head. The rocket class contains a monkey in it, and the two work together. The rocket also points in the direction that it is moving (which happened to be
-more complicated than it initially sounds). Everything translates and rotates and instances differ in terms of where in its movement cycle it is initially placed as well as 
-monkey color.
+more complicated than it initially sounds). Everything translates and rotates and instances differ in terms of where in its movement cycle it is initially placed and also 
+differ in monkey color.
 
 
 Spaceship (Taylor):
