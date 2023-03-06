@@ -9,6 +9,9 @@ SpaceMan Ship1;
 // Asteroid
 Asteroid ast1;
 
+// Planet
+CenterSpaceBody earth;
+
 // Your stuff Here
 
 
@@ -17,6 +20,7 @@ void setup(){
     camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 / 180.0),
            width/2.0, height/2.0, 0,
            0, 1, 0);
+    createPlanet();
     createRockets();
     createSpaceMan();
     createAsteroid();
@@ -24,9 +28,14 @@ void setup(){
 
 void draw(){
     background(30);
+    updatePlanet();
     updateRockets();
     updateSpaceMan();
     updateAsteroid();
+}
+
+void createPlanet() {
+    earth = new CenterSpaceBody(int(width*0.63), -0.01, width*3, -height*2, -width*4);
 }
 
 void createRockets(){
@@ -61,6 +70,10 @@ if (ast1.xpos > 1100 ){
   ast1.displayAsteroid(30);
    popMatrix();
  
+}
+
+void updatePlanet() {
+    earth.display();
 }
     
 }
