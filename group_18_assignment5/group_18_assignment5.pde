@@ -28,10 +28,15 @@ void setup(){
 
 void draw(){
     background(30);
+    addLights();
     updatePlanet();
     updateRockets();
     updateSpaceMan();
     updateAsteroid();
+}
+
+void addLights(){
+    lights();
 }
 
 void createPlanet() {
