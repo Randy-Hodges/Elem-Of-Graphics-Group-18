@@ -9,6 +9,19 @@ Class name (Randy):
 
 Class name (Taylor):
 
+For our Space Scene, I implemented the SpaceShip class and SpaceMan Subclass at the bottom of the screen. The biggest challenge was the implementation of the OBJ. The SpaceMan obj was appearing as a grey 2d image, even with the lights() applied—it took a long while to understand it was the way I was scaling the obj. Perfecting the sine oscillations was also a a fun challenge—each slight adjustment drastically changed the movement of the SpaceMan in comparison to the SpaceShip.
+
+SpaceShip Class:
+  - The arguments for this class are the X-position, Y-position, Z-position, and h ( the intended height of the spaceship).
+  - The methods include bob(), drift(), and display(). The bob() method takes a maximum vertical amplitude and a starting Unit Circle position, and uses them in a sine function to create the vertical oscillation of the SpaceShip. The drift() method takes the argument range (maximum horizontal displacement), and uses a sine function to create the horizontal oscillation of the SpaceShip.
+  - The Spaceship class uses the SpaceShipSkin.png to give the Sphere the look of a spaceship.
+
+SpaceMan Class:
+- This class inherits the X-Position, Y-Position, Z-Position and height of the Space Ship. It also inherits the drift() and bob() methods of the SpaceShip Class.
+- The other argument for this class is the trail, which creates an offset in the position of the SpaceMan and the SpaceShip.
+- The methods include bob(), drift(), roll(), and display(). The bob() method inherits the super.bob() method and alters the vertical sine path of the SpaceMan. The drift() method inherits the super.drift() method and expands the horizontal drifting range of the SpaceMan.
+- The SpaceMan class an obj—SpaceManModel.obj.
+
 Asteroid (Hannah): The animation that displays on screen is an asteroid that rotates while also translating across the screen. The asteroid also has 3 rocks that orbit
 around it while also translating with the asteroid. I only implemented one class, the asteroid class, that loads in the obj files of the asteroid and the 3 rocks and
 implements the transformations decribed above. I orginally intended to have a comet tail that would come off from behind the asteroid, however, I didn't think the comet
