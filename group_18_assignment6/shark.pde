@@ -13,7 +13,8 @@ class Shark{
   float worldY;
   int direction;
   int step;
-  float easing = 0.05;
+  float easing = 0.01;
+  float MARGIN_CONSTANT = .8;
   PShape sharkSVG;
   
   Shark(int xPos, int yPos, String pointed, int worldX, int worldY, int worldWidth, int worldHeight, int direction, int step){
@@ -31,9 +32,9 @@ class Shark{
     future = new int[worldHeight][worldWidth];
     
     if (pointed == "RIGHT"){
-      sharkSVG = loadShape("sharkSVGs/Shark_right.svg");
+      sharkSVG = loadShape("pictures/sharkSVGs/Shark_right.svg");
     } else {
-      sharkSVG = loadShape("sharkSVGs/Shark.svg");
+      sharkSVG = loadShape("pictures/sharkSVGs/Shark.svg");
     }
     
     // set all to 0
@@ -48,9 +49,8 @@ class Shark{
     current[yPos][xPos] = 1;
   }
   
-  float[] getSharkPosition(){
-    float[] sharkPosition = {followX, followY};
-    return sharkPosition;
+  PVector getSharkPosition(){
+    return new PVector(followX, followY);
   }
   
   void changeDirection(){
@@ -89,13 +89,13 @@ class Shark{
       xPos += step;
     }
     
-    if (xPos > (worldWidth - 2)){
+    if (xPos > (worldWidth - 100)){
       xPos = int(random(1, worldWidth - 1));
     } else if (xPos < 1){
       xPos = int(random(1, worldWidth - 1));
     }
     
-    if (yPos > (worldHeight - 2)){
+    if (yPos > (worldHeight - 300)){
       yPos = 1;
     } else if (yPos < 1){
       yPos = worldHeight - 2;
@@ -105,11 +105,14 @@ class Shark{
   void display(){
     followX += lerp(0, xPos - followX, easing);
     followY += lerp(0, yPos - followY, easing);
+    fill(0);
+    ellipse(followX, followY, 20, 20);
     pushMatrix();
     translate(worldX, worldY);
     pushMatrix();
-    scale(.5);
-    shape(sharkSVG, followX, followY);
+    translate(followX, followY);
+    scale(.4);
+    shape(sharkSVG, 0, 0);
     popMatrix();
     popMatrix();
     
