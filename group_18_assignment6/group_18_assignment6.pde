@@ -4,7 +4,7 @@ Shark shark2;
 Shark[] sharkList;
 // Minnows
 Minnow[] minnows;
-int num_minnows = 1;
+int num_minnows = 100;
 
 
 void setup(){

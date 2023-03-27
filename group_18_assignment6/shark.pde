@@ -16,6 +16,7 @@ class Shark{
   float easing = 0.01;
   float MARGIN_CONSTANT = .8;
   PShape sharkSVG;
+  float shark_width = 250, shark_height = 150;
   
   Shark(int xPos, int yPos, String pointed, int worldX, int worldY, int worldWidth, int worldHeight, int direction, int step){
     this.xPos = xPos;
@@ -50,7 +51,7 @@ class Shark{
   }
   
   PVector getSharkPosition(){
-    return new PVector(followX, followY);
+    return new PVector(worldX + followX + shark_width/2, worldY + followY + shark_height/2);
   }
   
   void changeDirection(){
@@ -105,8 +106,10 @@ class Shark{
   void display(){
     followX += lerp(0, xPos - followX, easing);
     followY += lerp(0, yPos - followY, easing);
-    fill(0);
-    ellipse(followX, followY, 20, 20);
+    // Used for checking actual position and hitboxes
+    // fill(0);
+    // ellipse(worldX + followX, worldY + followY, 20, 20);
+    // ellipse(worldX + followX + shark_width/2, worldY + followY + shark_height/2, shark_width, shark_height);
     pushMatrix();
     translate(worldX, worldY);
     pushMatrix();
