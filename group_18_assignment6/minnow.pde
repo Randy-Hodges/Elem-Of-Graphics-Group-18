@@ -20,6 +20,7 @@ class Minnow{
     Minnow(Shark[] sharks){
         this.sharks = sharks;
         fish = loadImage("pictures/minnows/fish_white.png");
+        // Physics Initialization
         pos = new PVector();
         vel = new PVector();
         acc = new PVector();
@@ -70,6 +71,7 @@ class Minnow{
         closeness = closeness.set(constrain(abs(closeness.x) - shark_width, 1, width), constrain(abs(closeness.y) - shark_height, 1, height));
         // Get force using sigmoid function
         float shark_force = SHARK_FORCE_CONST*sigmoid(k, 10/closeness.mag(), 1);
+        // Apply force in the correct direction
         return new PVector(shark_force*direction.x, shark_force*direction.y);
     }
 
@@ -89,7 +91,6 @@ class Minnow{
         bound_force.add(new PVector(0, -MAX_BOUND_FORCE*sigmoid(k, pos.y, height - LOWER_BUFFER)));
         // // lower bound
         bound_force.add(new PVector(0, MAX_BOUND_FORCE*sigmoid(k, -pos.y, 0)));
-        // println(bound_force);
         return bound_force;
     }
 
