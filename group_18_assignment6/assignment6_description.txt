@@ -1,3 +1,5 @@
+NOTE: For this assignment, each of our group members intend to use one of our slip days.
+
 A project description text file, assignment6_description.txt, that summarizes what the intended simulation depicts, what the included classes do,
  and any unexpected challenges. That is, this is mostly a rehash of the progress report but from the position of what you accomplished rather than 
  what you were planning. Also document which group member worked on which part of the assignment. While group coding is allowed, each member is
@@ -14,6 +16,16 @@ of the fish ended up looking even better than what I thought it would. Honestly,
 
 
 Sharks (Taylor):
+
+The Shark class is responsible for the two sharks in the simulation. The sharks use both a Langston's Ant function and an easing function to create the fluid lunging motions. The rules included in the class are the two rules of the Langston's Ant simulation. The two rules of the Langston's Ant simulation are 1) any position that is "on" must be turned "off" if touched (and vice versa) and 2) if the current position is "on", the ant must turn left, otherwise it must turn right. Unlike the Plankton class, the Langston's Ants rules serve to create "lunging points," or points that the shark lunges to, using an easing function. When the "ant" hits an edge, it reappears at a different edge, creating a sharper lunge by the shark—this also breaks the linear path that Langston's Ants usually falls into. By toying with the "step" (the size of the "ant"), the shark's lunges become more aggressive. By increasing the easing factor, the shark's movements become more erratic. Furthermore, the shark class also communicates its position as a vector, which affects the flocking motion of the minnows. Implementing this was a challenge at first—it took a while to get the Langston's Ants rule down, and to figure out what I wanted to do with the edge cases. I also faced challenges with the shark SVG files, but it turned out to be an issue in the illustrator settings. My original plan was to implement a grid system, but per the feedback on our progress report, I used an array instead. This way, I was able to alter the size of the step, and define specific territories for each of the two sharks.
+
+Method overview:
+- Shark(); initiates shark territory, starting position, initial direction, step size, and whether the sharkSVG is flipped left or right.
+- getSharkPosition(); returns the shark's position as a PVector
+- changeDirection(); changes the shark's direction depending on the state of the current position
+- changeState(); changes the current position of the shark from "on" to "off"
+- swim(); combines the changeDirection() and changeState() rules, applies the step size, and covers edge cases.
+- display(); implements the easing function, and scales the sharkSVG to a proper size
 
 
 Plankton (Hannah): The plankton class creates two plankton at the bottom of the sea that mimicks the motion of Langston's Ants. The plankton move across the screen and
