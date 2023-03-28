@@ -94,17 +94,17 @@ void turn(){
   
   void display(){
     pushMatrix();
-      translate(w, h);
+      translate(territoryX, territoryY);
       pushMatrix();
+      translate(x, y);
       fill(#5E7740);
       noStroke();
-      ellipse(x, y, 5, 5);
-      //plankton = loadShape("pictures/Plankton.svg");
+      ellipse(0, 0, 5, 5);
+      plankton = loadShape("pictures/Plankton.svg");
+      scale(.08);
+      shape(plankton, 0, 0);
     popMatrix();
     popMatrix();
   }
-  
- 
-  
-    
+   
 }
