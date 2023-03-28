@@ -8,10 +8,14 @@ int num_minnows = 100;
 //Plankton
 Plankton p1;
 Plankton p2;
+//Bubbles
+ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
 
 
 void setup(){
+  background(#83B4D8);
   size(1000, 1000);
+  createBubbles();
   createSharks();
   createMinnows();
   createPlankton();
@@ -21,7 +25,16 @@ void draw(){
   fill(#83B4D8);
   noStroke();
   rect(0, 0, width, height);
+  
+  //fill(#83B4D8, 10);
+  //noStroke();
+  //rect(0, 810, width, 190);
   // Update
+  updateBubbles();
+  fill(#83B4D8, 100);
+  noStroke();
+  rect(0, 0, width, height);
+  
   updateSharks();
   updateMinnows();
   updatePlankton();
@@ -58,14 +71,40 @@ void updateSharks(){
 }
 
 void createPlankton(){
-    p1 = new Plankton(70, 150, 10, 1000, 0, 800, 500);
-    p2 = new Plankton(0, 200, 10, 1000, 0, 800, 500);
+    p1 = new Plankton(70, 150, 30, 0, 800, width, 200);
+    p2 = new Plankton(0, 100, 30, 0, 800, width, 200);
+
 }
 
 void updatePlankton(){
-  p1.move();
-  p1.display();
+  if (frameCount%5 == 0){
+      p1.move();
+      p2.move();
+  }
   
-  p2.move();
   p2.display();
+  p1.display();
+
+}
+
+// functions for organization
+void createBubbles() {
+  
+  for (int i = 0; i < 65; i = i+1) {
+    bubbles.add(new Bubble(random(0, width), random(0, height)));
+  }
+  
+}
+
+void updateBubbles() {
+  for (int i = 0; i < 64; i = i+1) {
+    Bubble singleBubble = bubbles.get(i);
+    Bubble otherBub = bubbles.get(i+1);
+    singleBubble.bubblesTouch(otherBub);
+  }
+  for (int i = 0; i < 65; i = i+1) {
+    Bubble singleBubble = bubbles.get(i);
+    singleBubble.displayBubble();
+    singleBubble.bubbleMoves();
+  }
 }
