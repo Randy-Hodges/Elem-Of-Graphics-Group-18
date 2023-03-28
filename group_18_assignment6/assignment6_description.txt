@@ -16,7 +16,7 @@ of the fish ended up looking even better than what I thought it would. Honestly,
 Sharks (Taylor):
 
 
-Plankton (Hannah): 
+Plankton (Hannah): The plankton class creates two plankton at the bottom of the sea that mimicks the motion of Langston's Ants. The plankton move across the screen and then reappear when they fully go off screen. Compared to the progress report, I was supposed to have more plankton that run into each other to create a unique pattern, but instead I just ended up making the plankton to follow the motion of Langston's Ants. The code includes two rules which make the motion cycle in a square, instead of a random pattern, which I initially intended to do. In terms of design, I give credit to Taylor for helping me make the design of the plankton!
 
 
 Bubbles (Salamone):
