@@ -13,7 +13,7 @@ class Shark{
   float worldY;
   int direction;
   int step;
-  float easing = 0.01;
+  float easing = 0.02;
   float MARGIN_CONSTANT = .8;
   PShape sharkSVG;
   float shark_width = 250, shark_height = 150;
