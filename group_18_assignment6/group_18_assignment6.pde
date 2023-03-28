@@ -5,12 +5,16 @@ Shark[] sharkList;
 // Minnows
 Minnow[] minnows;
 int num_minnows = 100;
+//Plankton
+Plankton p1;
+Plankton p2;
 
 
 void setup(){
   size(1000, 1000);
   createSharks();
   createMinnows();
+  createPlankton();
 }
 
 void draw(){
@@ -20,6 +24,7 @@ void draw(){
   // Update
   updateSharks();
   updateMinnows();
+  updatePlankton();
 }
 
 void createMinnows(){
@@ -52,3 +57,15 @@ void updateSharks(){
   shark2.display();
 }
 
+void createPlankton(){
+    p1 = new Plankton(70, 150, 10, 1000, 0, 800, 500);
+    p2 = new Plankton(0, 200, 10, 1000, 0, 800, 500);
+}
+
+void updatePlankton(){
+  p1.move();
+  p1.display();
+  
+  p2.move();
+  p2.display();
+}
