@@ -99,7 +99,7 @@ void turn(){
       fill(#5E7740);
       noStroke();
       //ellipse(x, y, 5, 5);
-      plankton = loadShape("pictures/Plankton.png");
+      plankton = loadShape("pictures/Plankton.svg");
     popMatrix();
     popMatrix();
   }
