@@ -54,15 +54,15 @@ void updateMinnows(){
 }
 
 void createSharks(){
-  shark1 = new Shark(1, 1, "RIGHT", 0, 0, 600, height, 0, 150);
-  shark2 = new Shark(1, 1, "LEFT", 400, 0, 600, height, 1, 50);
+  shark1 = new Shark(1, 1, "RIGHT", 0, 0, 600, height, 0, 200);
+  shark2 = new Shark(1, 1, "LEFT", 400, 0, 600, height, 1, 100);
   sharkList = new Shark[2];
   sharkList[0] = shark1;
   sharkList[1] = shark2;
 }
 
 void updateSharks(){
-  if (frameCount%10 == 0){
+  if (frameCount%8 == 0){
     shark1.swim();
     shark2.swim();
   }
