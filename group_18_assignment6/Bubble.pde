@@ -1,10 +1,3 @@
-
-// F_{b} = - p * g * V
-//F_{b}  =  buoyant force
-//rho  =  fluid density
-//g  =  acceleration due to gravity
-//V  =  fluid volume
-
 class Bubble {
   //PShape bubbleSVG = loadShape("Bubble-459842357437834567.svg");
   PShape bubbleSVG = loadShape("fewBubbles.svg");
@@ -52,7 +45,10 @@ class Bubble {
       pushMatrix();
       scale(bubbleScale);
       rotate(radians(10*direction));
+      bubbleSVG.disableStyle();
+      fill(255);
       shape(bubbleSVG, 0, 0);
+      bubbleSVG.enableStyle();
       popMatrix();
     popMatrix();
   }
