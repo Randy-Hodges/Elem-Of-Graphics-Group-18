@@ -86,12 +86,8 @@ class Bubble {
     
     // bubbles bounce off each other if intersect
     if (distanceBetween < radiusOne+radiusTwo) {
-      if (this.direction == -1) {
-        this.direction = 1;
-      } else {
-        this.direction = -1;
-      }
-      
+      this.y = height;
+      otherBubble.y = height + 50;
     } 
   }
   
