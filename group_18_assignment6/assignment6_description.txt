@@ -1,0 +1,22 @@
+A project description text file, assignment6_description.txt, that summarizes what the intended simulation depicts, what the included classes do,
+ and any unexpected challenges. That is, this is mostly a rehash of the progress report but from the position of what you accomplished rather than 
+ what you were planning. Also document which group member worked on which part of the assignment. While group coding is allowed, each member is
+  responsible for their individual parts -- this ensures all group members are participating and have mastery of the assignment.
+
+Overview: Our code presents an underwater environment with various changing objects.
+
+
+Minnows (Randy): The Minnow class is responsible for all of the pink fish in the sim. I ended up creating them kind of close to a particle system with 
+many different governing forces, specifically a gravity force (towards the center of the screen), a boundary force (to keep fish on screen), and a shark
+force to keep fish away from sharks. Most of the forces use the sigmoid function to calculate the magnitude of the force. The fish also change color 
+based on how close they get to the sharks. In terms of how things went, they went amazingly well. The code felt pretty clean and natural and the color
+of the fish ended up looking even better than what I thought it would. Honestly, I'm really pleased with how it turned out. 
+
+
+Sharks (Taylor):
+
+
+Plankton (Hannah): 
+
+
+Bubbles (Salamone):
