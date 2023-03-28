@@ -22,4 +22,14 @@ but instead I just ended up making the plankton to follow the motion of Langston
 a random pattern, which I initially intended to do. In terms of design, I give credit to Taylor for helping me make the design of the plankton!
 
 
-Bubbles (Salamone):
+Bubbles (Salomone):
+Salomone created the bubbles. They use a svg for the bubbles. They vary in size (the bubbles). 
+The larger the bubble, the sooner they blow up in our scene. Tiny bubbles move all the way up. 
+They also move based upon the pressure of the bubbles and the water above the bubble. So they 
+move faster from the bottom to the top. I thought about adding an ability to change the bubble 
+speed of moving and how much it gets affected by depth. 
+    Originally wanted to have pretty blue bubbles but I could not figure out the svg I downloaded.
+The bubbles I have now are not the color I want but that is okay. Another feature that did not go
+As wanted was the ability to have bubbles pop when touching minnows or sharks but there is so many
+And there would be barely any bubbles. Other feature I thought of was having bubbles merge or 
+Bounce off each other but it doesn't.
