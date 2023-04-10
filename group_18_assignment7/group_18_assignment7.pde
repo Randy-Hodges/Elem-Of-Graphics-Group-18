@@ -4,9 +4,8 @@ Bully[] bullys;
 // Dodgeballs
 Dodgeball[] allBalls;
 int num_balls = 6;
-//Player
-Player p;
-ArrayList<Ball> b;
+// Player
+Player hero;
 
 void setup(){
   background(#83B4D8);
@@ -15,7 +14,6 @@ void setup(){
   createDodgeballs();
   createBullies();
   createPlayer();
-  createBall();
 }
 
 void draw(){
@@ -24,11 +22,21 @@ void draw(){
   // noStroke();
   updateBullies();
   updateDodgeballs();
-  p.addPlayer(); 
-  p.keyPressed();
-  throwBall();
+  hero.keyPressed();
+  updatePlayer();
 }
 
+void createPlayer(){
+  hero = new Player(width/2, 800, 30, "hero");
+}
+
+void updatePlayer(){
+  hero.pickUp(allBalls);
+  hero.addPlayer(); 
+  if (hero.isPlayerHit()){
+    rect(0, 0, width, height);
+  }
+}
 
 void createBullies(){
   bullys = new Bully[num_bullys];
@@ -52,29 +60,14 @@ void createDodgeballs(){
 
 void updateDodgeballs(){
   for (int i = 0; i < num_balls; i++){
-    allBalls[i].update();
+    allBalls[i].move();
+    allBalls[i].overrideMove(hero.playerX, hero.playerY);
+    allBalls[i].applyBounce();
+    allBalls[i].updateAllegiance();
+    allBalls[i].display();
   }
 }
 
-// add player
-void createPlayer(){
-  p = new Player(width/2, 750, 24);
-}
-
-// add balls player throws
-void createBall(){
-  b = new ArrayList<Ball>();
-}
-void keyPressed(){ 
-    if (key == ' '){
-      b.add( new Ball(p.playerX, p.playerY));
-        
-    }
-}
-    
-void throwBall(){
-  for (Ball aBall : b){
-    aBall.addBall();
-    aBall.move();
-  }
+void mouseClicked(){
+  hero.launch(mouseX, mouseY);
 }
