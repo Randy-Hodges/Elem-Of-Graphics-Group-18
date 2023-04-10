@@ -1,4 +1,4 @@
-Dodgeball ball0;
+/* Dodgeball ball0;
 Dodgeball ball1;
 Dodgeball ball2;
 Player p1;
@@ -43,9 +43,9 @@ void draw(){
 //}
 
 //void mouseReleased(){
-//  ball1.launch(mouseX, mouseY, 10, 10);
+ ball1.launch(mouseX, mouseY, 10, 10);
 //}
 
 void mouseClicked(){
   p1.launch(mouseX, mouseY);
-}
+} */

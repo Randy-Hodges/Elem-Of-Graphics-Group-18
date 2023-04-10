@@ -68,12 +68,12 @@ class Bully {
             vel = PVector.random2D().mult(speed);
         }
         // Difficulty changes
-        if (difficulty == HARD){
-            Dodgeball ball = findNearestThrownBall();
-            if ({dist to closest ball < threshold}){
+        // if (difficulty == HARD){
+        //     Dodgeball ball = findNearestThrownBall();
+        //     if ({dist to closest ball < threshold}){
                 
-            }
-        }
+        //     }
+        // }
 
     }
 
