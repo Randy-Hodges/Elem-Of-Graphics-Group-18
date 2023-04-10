@@ -10,7 +10,7 @@ class Dodgeball{
   PVector vel;
   float mass = 146;
   float r = 25;
-  float launch_speed = 10;
+  float launch_speed = 16;
   float dead_speed = 1;
   // team stuff
   boolean isPlayerBall; // Changes in pickUp function
@@ -19,14 +19,7 @@ class Dodgeball{
   
   Dodgeball(float x, float y){
     pos = new PVector(x, y);
-    vel = new PVector();
-  }
-
-  void update(){
-    move();
-    applyBounce();
-    updateAllegiance();
-    display();
+    vel = new PVector(10, 10);
   }
   
   void move(){
@@ -41,16 +34,27 @@ class Dodgeball{
     }
   }
   
+  void overrideMove(float playerX, float playerY){
+    if (isPossessed == true){
+      pos.x = playerX - 25;
+      pos.y = playerY - 25;
+    }
+  }
+  
   void applyBounce(){
     // top/bottom
     if (pos.y > (height - r) || pos.y < r){
       vel.y = -vel.y;
-      dead = true;
+      if (!isPossessed){
+        dead = true;
+      }
     }
     // sides
     if (pos.x > (width - r) || pos.x < r){
       vel.x = -vel.x;
-      dead = true;
+      if (!isPossessed){
+        dead = true;
+      }
     }
   }
   
@@ -83,10 +87,12 @@ class Dodgeball{
     dead = false;
   }
   
-  void pickUp(boolean isPlayerBall){
+  void pickUp(boolean isPlayerBall, float playerX, float playerY){
     this.isPlayerBall = isPlayerBall;
     dead = false;
     isPossessed = true;
+    pos.x = playerX-5;
+    pos.y = playerY-5;
   }
   
   void display(){
