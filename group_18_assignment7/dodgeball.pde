@@ -14,7 +14,7 @@ class Dodgeball{
   float dead_speed = 1;
   // team stuff
   boolean isPlayerBall; // Changes in pickUp function
-  Boolean isPossessed = false; // other classes need to flip this switch
+  Boolean isPossessed = false; 
   Boolean dead = true;
   
   Dodgeball(float x, float y){
