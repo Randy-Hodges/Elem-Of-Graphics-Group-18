@@ -78,8 +78,8 @@ class Player{
   void launch(float x2, float y2){
     if (currentBall != null){
       PVector target = new PVector(x2, y2);
-      PVector ball_pos = new PVector(pos.x, pos.y);
-      PVector dir = PVector.sub(target, ball_pos);
+      PVector player_pos = new PVector(pos.x, pos.y);
+      PVector dir = PVector.sub(target, player_pos);
       dir.normalize();
       dir.mult(.5);
       currentBall.launch(dir);

@@ -9,6 +9,7 @@ class Bully {
     // Balls
     int num_balls_carried;
     Dodgeball[] all_balls;
+    int cur_ball_idx = -1;
     float spread_angle; // represents the max angle that a ball can be shot at player
     // Difficulty
     int difficulty;
@@ -83,6 +84,11 @@ class Bully {
         // Move
         pos.x += vel.x;
         pos.y += vel.y;
+        // move ball with enemy
+        // if they have a ball
+        if (cur_ball_idx != -1){
+            all_balls[cur_ball_idx].pos = pos.copy();
+        }
         // Stay in Bounds
          if (pos.x < boundary_buffer || pos.x > width - boundary_buffer) {
             vel.x *= -1;
@@ -90,18 +96,34 @@ class Bully {
         if (pos.y < boundary_buffer || pos.y > height/2 - boundary_buffer) {
             vel.y *= -1;
         }
+        // Pick up balls (not as clean as I want, but idc rn)
+        float min_len, ball_idx;
+        float[] stuff = new float[2]; // Processing not allowing me to do things how I want to
+        stuff = findNearestAvailableBall();
+        min_len = stuff[0];
+        ball_idx = stuff[1];
+        if (min_len < 25){ // 25 is the radius of the ball. Should access from actual Class but no time to look up how atm
+            cur_ball_idx = int(ball_idx);
+            Dodgeball cur_ball = all_balls[cur_ball_idx];
+            cur_ball.pickUp(false, pos.x, pos.y);
+            cur_ball.pos = pos.copy();
+        }
         // Choose to move another way
         if (frameCount % int(frameRate*decision_rate) == 0){
-            vel = PVector.random2D().mult(speed);
+            // if (int(random(2)) == 0 || cur_ball_idx != -1){
+                vel = PVector.random2D().mult(speed);
+            // }
+            // else{
+            //     // move towards nearest ball
+            //     vel = all_balls[int(ball_idx)].pos.copy().sub(pos).normalize().mult(speed);
+            // }
         }
         // Changes due to difficulty level
         if (difficulty == HARD){
-            float min_len, ball_idx;
-            float[] stuff = new float[2]; // Processing not allowing me to do things how I want to
             stuff = findNearestThrownBall();
             min_len = stuff[0];
             ball_idx = stuff[1];
-            if (min_len < hard_avoiding_dist){
+            if (min_len < hard_avoiding_dist && cur_ball_idx == -1){
                 // Move away from closest ball
                 vel = pos.copy().sub(all_balls[int(ball_idx)].pos).normalize().mult(speed);
             }
@@ -126,12 +148,36 @@ class Bully {
         return answer;
     }
 
+    float[] findNearestAvailableBall(){
+    // Finds the closest ball to the enemy
+        float min_length = Float.MAX_VALUE;
+        int ball_idx = 0;
+        for(int i = 0; i < all_balls.length; i++){
+            if (!all_balls[i].dead){
+                continue;
+            }
+            float enemy_to_ball_dist = all_balls[i].pos.dist(pos);
+            if (enemy_to_ball_dist < min_length){
+                ball_idx = i;
+                min_length = enemy_to_ball_dist;
+            }
+        }
+        float[] answer = {min_length, ball_idx};
+        return answer;
+    }
+
     void throwBall(){
-        if (frameCount % int(frameRate*3) == 0){
+        if (frameCount % int(frameRate*3) == 0 && cur_ball_idx != -1){
+            // Aim ball
+            player_pos = hero.pos.copy();
             PVector vec_towards_player = player_pos.copy().sub(pos);
             float variation = random(-spread_angle, spread_angle);
-            vec_towards_player.rotate(variation);
-            line(pos.x, pos.y, pos.x + vec_towards_player.x*100, pos.y + vec_towards_player.y*100);
+            vec_towards_player.rotate(variation).normalize();
+            // line(pos.x, pos.y, pos.x + vec_towards_player.x*100, pos.y + vec_towards_player.y*100);
+            // Launch ball
+            all_balls[cur_ball_idx].launch(vec_towards_player);
+            cur_ball_idx = -1;
+            cur_anim = "throw-ball";
         }
     }
 
@@ -191,7 +237,7 @@ class Bully {
         image(sprite, 0, 0);
         ellipse(0, 0, 10, 10);
         popMatrix();
-        
+
         imageMode(CORNER);
         scale(1);
     }

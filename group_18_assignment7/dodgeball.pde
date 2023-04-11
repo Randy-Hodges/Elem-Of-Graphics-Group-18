@@ -35,7 +35,7 @@ class Dodgeball{
   }
   
   void overrideMove(float playerX, float playerY){
-    if (isPossessed == true){
+    if (isPossessed == true && isPlayerBall){
       pos.x = playerX - 25;
       pos.y = playerY - 25;
     }
