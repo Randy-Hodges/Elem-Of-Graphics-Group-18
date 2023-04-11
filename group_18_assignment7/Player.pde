@@ -1,6 +1,6 @@
 class Player{
   
-  int playerX, playerY; // player's position
+  PVector pos; // player's position
   int playerSize = 24; // scaling player size
   
   Dodgeball[] allBalls;
@@ -9,10 +9,8 @@ class Player{
   boolean hasBall = false;
   String teamName;
   
-  Player(int playerX, int playerY, int playerSize, String teamName){
-    
-    this.playerX = playerX;
-    this.playerY = playerY;
+  Player(int posx, int posy, int playerSize, String teamName){
+    pos = new PVector(posx, posy);
     this.playerSize = playerSize;
     this.teamName = teamName;
   }
@@ -21,28 +19,28 @@ class Player{
   void keyPressed(){
     
     if (key == 'w'|| key == 'W'){
-     playerY = playerY - 5;
-     if (playerY < 500){
-      playerY = 500;
+     pos.y = pos.y - 5;
+     if (pos.y < 500){
+      pos.y = 500;
      }
     }
     if (key == 's' || key == 'S'){
-      playerY = playerY + 5;
-      if (playerY > height){
-        playerY = height;
+      pos.y = pos.y + 5;
+      if (pos.y > height){
+        pos.y = height;
       }
     }
     if (key == 'd' || key == 'D'){
-     playerX = playerX + 5;
-     if (playerX > width){
-       playerX = width;
+     pos.x = pos.x + 5;
+     if (pos.x > width){
+       pos.x = width;
      }
      }
     
     if (key == 'a' || key == 'A'){
-     playerX = playerX - 5;
-     if (playerX < 0){
-       playerX = 0;
+     pos.x = pos.x - 5;
+     if (pos.x < 0){
+       pos.x = 0;
      }
     }
   }
@@ -50,11 +48,11 @@ class Player{
   void pickUp(Dodgeball[] allBalls){
     this.allBalls = allBalls;
     for (Dodgeball ball: allBalls){
-      if (ball.intersect(playerX, playerY) && (hasBall == false)){
+      if (ball.intersect(pos.x, pos.y) && (hasBall == false)){
         println("INTERSECT");
-        ball.pickUp(true, playerX, playerY);
+        ball.pickUp(true, pos.x, pos.y);
         currentBall = ball;
-        println(playerX, playerY);
+        println(pos.x, pos.y);
         hasBall = true;
       }
     }
@@ -63,7 +61,7 @@ class Player{
   
   boolean isPlayerHit(){
     for (Dodgeball ball: allBalls){
-      if (ball.intersect(playerX, playerY) && !ball.isPlayerBall && !ball.dead){
+      if (ball.intersect(pos.x, pos.y) && !ball.isPlayerBall && !ball.dead){
         return true;
       }
     }
@@ -74,14 +72,14 @@ class Player{
   void aim(){
     strokeWeight(1);
     stroke(224, 225, 228);
-    line(playerX, playerY, mouseX, mouseY);  
+    line(pos.x, pos.y, mouseX, mouseY);  
   }
   
   void launch(float x2, float y2){
     if (currentBall != null){
       PVector target = new PVector(x2, y2);
-      PVector pos = new PVector(playerX, playerY);
-      PVector dir = PVector.sub(target, pos);
+      PVector ball_pos = new PVector(pos.x, pos.y);
+      PVector dir = PVector.sub(target, ball_pos);
       dir.normalize();
       dir.mult(.5);
       currentBall.launch(dir);
@@ -94,6 +92,6 @@ class Player{
   // draws player to screen
   void addPlayer(){
     fill(#253237);
-    ellipse(playerX, playerY, playerSize, playerSize);
+    ellipse(pos.x, pos.y, playerSize, playerSize);
      }
 }
