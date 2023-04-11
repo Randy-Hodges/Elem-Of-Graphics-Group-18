@@ -1,6 +1,7 @@
 // Bullies
 int num_bullys = 4;
 Bully[] bullys;
+int bullies_defeated = 0;
 // Dodgeballs
 Dodgeball[] allBalls;
 int num_balls = 6;
@@ -48,9 +49,6 @@ void createBullies(){
 void updateBullies(){
   for (int i = 0; i < num_bullys; i++){
     bullys[i].update();
-    // if (bullys[i].isBullyHit()){
-    //   num_bullys -= 1;
-    // }
   }
 }
 

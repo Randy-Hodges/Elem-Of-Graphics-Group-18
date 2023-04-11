@@ -27,6 +27,7 @@ class Bully {
     int throw_idx;
     // Other
     int decision_rate; // how often [in sec] the player switches direction, goes for a ball, etc
+    boolean dead = false;
 
     Bully(float x, float y, int difficulty, Dodgeball[] all_balls){
         // Difficulty params
@@ -75,10 +76,14 @@ class Bully {
     }
 
     void update(){
-        move();
-        throwBall();
-        display();
+        if (!dead){
+            move();
+            throwBall();
+            display();
+            checkNotDead();
+        }
     }
+
 
     void move(){
         // Move
@@ -110,13 +115,14 @@ class Bully {
         }
         // Choose to move another way
         if (frameCount % int(frameRate*decision_rate) == 0){
-            // if (int(random(2)) == 0 || cur_ball_idx != -1){
+            if (int(random(2)) == 0){
+                // Random movement
                 vel = PVector.random2D().mult(speed);
-            // }
-            // else{
-            //     // move towards nearest ball
-            //     vel = all_balls[int(ball_idx)].pos.copy().sub(pos).normalize().mult(speed);
-            // }
+            }
+            else{
+                // move towards nearest ball
+                vel = all_balls[int(ball_idx)].pos.copy().sub(pos).normalize().mult(speed);
+            }
         }
         // Changes due to difficulty level
         if (difficulty == HARD){
@@ -178,6 +184,24 @@ class Bully {
             all_balls[cur_ball_idx].launch(vec_towards_player);
             cur_ball_idx = -1;
             cur_anim = "throw-ball";
+        }
+    }
+
+    void checkNotDead(){
+        // Finds the closest thrown ball to the enemy
+        for(int i = 0; i < all_balls.length; i++){
+            Dodgeball ball = all_balls[i];
+            if (ball.dead || !ball.isPlayerBall){
+                continue;
+            }
+            float enemy_to_ball_dist = all_balls[i].pos.dist(pos);
+            if (enemy_to_ball_dist < 40){ // radius of ball + buffer. Really should make it better but no time
+                // die and put off screen
+                dead = true;
+                pos.x = -500;
+                pos.y = -500;
+                bullies_defeated += 1;
+            }
         }
     }
 
