@@ -26,7 +26,8 @@
   and allow you to move around. I also created a Ball class that allowed the user to throw balls with the spacebar, but Taylor ended up switching the interactivity
   with the throwBall() function into her class! The Ball class that I created was used as a template for Taylor's Dodgeball class instead! I also created the
   images of the loading screen and game over screen for when the player either wins or loses.
-  2.
+  2. I didn't have any challenges making the player class code, however it was a little difficult to piece everything together with the user interface and the
+  other classes as well like the dodgeball class.
   
   Salomonoe:
   1. Classes done are the Score class and Field class. Field may change colors for different themes. 
