@@ -33,5 +33,8 @@
   Score keeps points up when hitting others. Added functionality to have separate screens for 
   starting game, playing, and end screen of win or lose. Received help with website 
   https://www.toptal.com/game/ultimate-guide-to-processing-simple-game as a skeleton to put our code.
+  I also used this website, https://www.recunlimited.com/blog/diagrams-basketball-courts/ , to look 
+  at different basketball courts to replicate a court in processing. using dimensions of the court
+  and relating everything to the length of one side as percentages of the length of the court.
   2. Problems with pausing the game and being able to keep saveState. Didn't add a slider for difficulty
   as I thought I would do. Not as many different menus as I thought would be put.
