@@ -1,8 +1,8 @@
 class Dodgeball{
   
   // colors
-  color side1Color = #BF4343;
-  color side2Color = #9CC6A9;
+  color side1Color = #74F0B9;
+  color side2Color = #F27575;
   color deadColor = #DED9C7; 
   color currentColor = deadColor;
   // Physics

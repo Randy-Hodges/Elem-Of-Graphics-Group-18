@@ -7,11 +7,18 @@ Dodgeball[] allBalls;
 int num_balls = 6;
 // Player
 Player hero;
+Score score;
+Field field;
+PImage lose;
+PImage win;
+PImage menu;
+boolean gameStart = false;
 
 void setup(){
   background(#83B4D8);
   size(1000, 1000);
   frameRate(20);
+  createGUI();
   createDodgeballs();
   createBullies();
   createPlayer();
@@ -21,10 +28,48 @@ void draw(){
   fill(#83B4D8);
   rect(0, 0, width, height);
   // noStroke();
+  updateGUI();
   updateBullies();
   updateDodgeballs();
   hero.keyPressed();
   updatePlayer();
+  startGame();
+  endGame();
+}
+
+void startGame(){
+  if (gameStart == true){
+    image(menu, -width, 0);
+    loop();
+  } else {
+    image(menu, 0, 0);
+  }
+}
+
+void endGame(){
+  if (hero.isPlayerHit()){
+    image(lose, 0, 0);
+    noLoop();
+  } else if (num_bullies_defeated == num_bullys){
+    image(win, 0, 0);
+    noLoop();
+  }
+
+}
+
+void createGUI(){
+  score = new Score();
+  field = new Field();
+  lose = loadImage("Game Loading Images/Game End Lose.png");
+  win = loadImage("Game Loading Images/Game End Win.png");
+  menu = loadImage("Game Loading Images/Game Menu.png");
+  
+}
+
+void updateGUI(){
+  field.displayingField();
+  score.displayingScore();
+  score.points = num_bullies_defeated;
 }
 
 void createPlayer(){
@@ -71,4 +116,7 @@ void updateDodgeballs(){
 
 void mouseClicked(){
   hero.launch(mouseX, mouseY);
+  if (gameStart == false){
+    gameStart = !gameStart;
+  }
 }

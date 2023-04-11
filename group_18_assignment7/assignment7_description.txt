@@ -1,4 +1,4 @@
- Assignment 7 Description
+Assignment 7 Description
  
  Game Functionality/Rules/How to Win or Lose:
  The user presses keys W, A, S, and D to move across the screen and moves their mouse on the screen to aim their dodgeball. The player clicks 
@@ -9,17 +9,12 @@
  Group Members (1- Classes, 2- Unexpected Challenges):
  
   Randy:
-  1. Randy made the Bully class and worked a fair bit on the dodgeball class. The bully class contains all of the code that displays, moves, and does the logic
-     with the enemy dodgeball players. The bullies move around, move away/towards balls depending on their state, and throws balls towards the player with
-     a range of potential angles. The dodgeball class are the balls on screen, but Taylor will explain this class in more detail. The bullies do a lot of 
-     what I originally intended. They have multiple difficulty levels, move around in interesting ways, and throw the ball towards the target.
-  2. In terms of unexpected challenges, making everything work together had some challenges that took some time. Additionally, as of the time that I am 
-     writing this, I don't think the multiple difficulty levels will be accessible because the GUI was very late in getting made. Also, sometimes
-      the bullies get stuck on edges. I don't currently know what is causing that.
+  1. Randy made the Bully class and worked a fair bit on the dodgeball class. The bully class 				contains all of the code that displays, moves, and does the logic with the enemy dodgeball players. The bullies move around, move away/towards balls depending on their state, and throws balls towards the player with a range of potential angles. The dodgeball class are the balls on screen, but Taylor will explain this class in more detail. The bullies do a lot of  what I originally intended. They have multiple difficulty levels, move around in interesting ways, and throw the ball towards the target.
+  2. In terms of unexpected challenges, making everything work together had some challenges that took some time. Additionally, as of the time that I am writing this, I don't think the multiple difficulty levels will be accessible because the GUI was very late in getting made. Also, sometimes the bullies get stuck on edges. I don't currently know what is causing that.
   
   Taylor:
-  1.
-  2. 
+  1. The class I created was the Dodgeball class, which started with Hannah's Ball initial class. I also updated Hannah's Player class to work with my Dodgeball class. This class creates dodgeballs which are able to communicate their "allegiance"—this way, the Player knows whether or not a ball is "dead" or if it is "hot"—in other words, whether a ball can get them out or not. My class also works with the Player and Bully classes to ensure that, once a ball and a character cross paths, that character picks up the ball. However, each character can only pick up one ball at a time—this is implemented through the isPossessed boolean.
+  2. The main challenge I had with this code involved the aiming, and launching of the dodgeball—figuring out the Vector math took me a bit, but I was able to iron that out eventually.
   
   Hannah:
   1. The classes I created were the Player and Ball class. The Player class is what the user interacts with as it draws the main character on the screen
@@ -38,3 +33,4 @@
   and relating everything to the length of one side as percentages of the length of the court.
   2. Problems with pausing the game and being able to keep saveState. Didn't add a slider for difficulty
   as I thought I would do. Not as many different menus as I thought would be put.
+ 

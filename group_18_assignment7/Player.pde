@@ -49,10 +49,8 @@ class Player{
     this.allBalls = allBalls;
     for (Dodgeball ball: allBalls){
       if (ball.intersect(pos.x, pos.y) && (hasBall == false)){
-        println("INTERSECT");
         ball.pickUp(true, pos.x, pos.y);
         currentBall = ball;
-        println(pos.x, pos.y);
         hasBall = true;
       }
     }
@@ -91,7 +89,7 @@ class Player{
   
   // draws player to screen
   void addPlayer(){
-    fill(#253237);
+    fill(#74F0B9);
     ellipse(pos.x, pos.y, playerSize, playerSize);
      }
 }
