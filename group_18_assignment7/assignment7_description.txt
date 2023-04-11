@@ -9,8 +9,14 @@
  Group Members (1- Classes, 2- Unexpected Challenges):
  
   Randy:
-  1. 
-  2.
+  1. Randy made the Bully class and worked a fair bit on the dodgeball class. The bully class contains all of the code that displays, moves, and does the logic
+     with the enemy dodgeball players. The bullies move around, move away/towards balls depending on their state, and throws balls towards the player with
+     a range of potential angles. The dodgeball class are the balls on screen, but Taylor will explain this class in more detail. The bullies do a lot of 
+     what I originally intended. They have multiple difficulty levels, move around in interesting ways, and throw the ball towards the target.
+  2. In terms of unexpected challenges, making everything work together had some challenges that took some time. Additionally, as of the time that I am 
+     writing this, I don't think the multiple difficulty levels will be accessible because the GUI was very late in getting made. Also, while this didn't
+     effect the outcome of my code and didn't make a big difference, I ended up being a little more tired/lazy towards the end of writing my code so it
+      became a little less clean than what I normally produce. I put comments for what the better or more correct way of doing things was. 
   
   Taylor:
   1.
