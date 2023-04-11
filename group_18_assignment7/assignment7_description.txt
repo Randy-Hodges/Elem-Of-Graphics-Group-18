@@ -20,7 +20,10 @@
   1. 
   2.
   
-  Salamonoe:
-  1.
-  2. 
- 
+  Salomonoe:
+  1. Classes done are the Score class and Field class. Field may change colors for different themes. 
+  Score keeps points up when hitting others. Added functionality to have separate screens for 
+  starting game, playing, and end screen of win or lose. Received help with website 
+  https://www.toptal.com/game/ultimate-guide-to-processing-simple-game as a skeleton to put our code.
+  2. Problems with pausing the game and being able to keep saveState. Didn't add a slider for difficulty
+  as I thought I would do. Not as many different menus as I thought would be put.
