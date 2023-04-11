@@ -2,12 +2,15 @@ class Player{
   
   int playerX, playerY; // player's position
   int playerSize = 24; // scaling player size
+  
   Dodgeball[] allBalls;
   Dodgeball currentBall;
+  
   boolean hasBall = false;
   String teamName;
   
   Player(int playerX, int playerY, int playerSize, String teamName){
+    
     this.playerX = playerX;
     this.playerY = playerY;
     this.playerSize = playerSize;
@@ -49,13 +52,22 @@ class Player{
     for (Dodgeball ball: allBalls){
       if (ball.intersect(playerX, playerY) && (hasBall == false)){
         println("INTERSECT");
-        ball.pickUp(playerX, playerY, teamName);
+        ball.pickUp(true, playerX, playerY);
         currentBall = ball;
         println(playerX, playerY);
         hasBall = true;
       }
     }
     
+  }
+  
+  boolean isPlayerHit(){
+    for (Dodgeball ball: allBalls){
+      if (ball.intersect(playerX, playerY) && !ball.isPlayerBall && !ball.dead){
+        return true;
+      }
+    }
+    return false;
   }
 
   // draws line from player to mouse position
@@ -67,14 +79,12 @@ class Player{
   
   void launch(float x2, float y2){
     if (currentBall != null){
-      float run = x2 - playerX;
-      float rise = y2 - playerY;
-      PVector slope = new PVector(playerX - x2, playerY - y2);
       PVector target = new PVector(x2, y2);
-      slope.normalize();
-      //vel = new PVector(0, 10);
-      //vel.rotate(degrees(a));
-      currentBall.launch(playerX, playerY, slope.x*10, slope.y*10);
+      PVector pos = new PVector(playerX, playerY);
+      PVector dir = PVector.sub(target, pos);
+      dir.normalize();
+      dir.mult(.5);
+      currentBall.launch(dir);
       hasBall = false;
       currentBall = null;
     }
