@@ -48,6 +48,10 @@ void createBullies(){
 void updateBullies(){
   for (int i = 0; i < num_bullys; i++){
     bullys[i].update();
+    if (bullys[i].isBullyHit()){
+      num_bullys -= 1;
+      
+    }
   }
 }
 
