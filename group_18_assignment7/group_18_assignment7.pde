@@ -48,10 +48,9 @@ void createBullies(){
 void updateBullies(){
   for (int i = 0; i < num_bullys; i++){
     bullys[i].update();
-    if (bullys[i].isBullyHit()){
-      num_bullys -= 1;
-      
-    }
+    // if (bullys[i].isBullyHit()){
+    //   num_bullys -= 1;
+    // }
   }
 }
 
@@ -65,7 +64,7 @@ void createDodgeballs(){
 void updateDodgeballs(){
   for (int i = 0; i < num_balls; i++){
     allBalls[i].move();
-    allBalls[i].overrideMove(hero.playerX, hero.playerY);
+    allBalls[i].overrideMove(hero.pos.x, hero.pos.y);
     allBalls[i].applyBounce();
     allBalls[i].updateAllegiance();
     allBalls[i].display();

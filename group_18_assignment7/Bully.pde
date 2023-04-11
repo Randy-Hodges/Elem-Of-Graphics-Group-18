@@ -16,6 +16,14 @@ class Bully {
     final int MEDIUM = 1;
     final int HARD = 2;
     float hard_avoiding_dist = 50;
+    // Sprites
+    PImage[] run_ball_sp;
+    PImage[] run_sp;
+    PImage[] throw_sp;
+    String cur_anim = "run";
+    int runb_idx;
+    int run_idx;
+    int throw_idx;
     // Other
     int decision_rate; // how often [in sec] the player switches direction, goes for a ball, etc
 
@@ -46,6 +54,23 @@ class Bully {
         // Other
         decision_rate = int(random(3, 6));
         this.all_balls = all_balls;
+        loadSprites();
+    }
+
+    void loadSprites(){
+        run_ball_sp = new PImage[2];
+        run_sp = new PImage[2];
+        throw_sp = new PImage[3];
+        // Technically speaking, doing multiple loops is more flexible but idc rn
+        for (int i = 0; i < 2; i++) {
+            String image_name = "Bully Sprite/runBall/runBall-" + nf(i+1, 1) + ".png";
+            run_ball_sp[i] = loadImage(image_name);
+            image_name = "Bully Sprite/run/run-" + nf(i+1, 1) + ".png";
+            run_sp[i] = loadImage(image_name);
+            image_name = "Bully Sprite/throw/throwBall-" + nf(i+1, 1) + ".png";
+            throw_sp[i] = loadImage(image_name);
+        }
+        throw_sp[2] = loadImage("Bully Sprite/throw/throwBall-3.png");
     }
 
     void update(){
@@ -102,23 +127,72 @@ class Bully {
     }
 
     void throwBall(){
-        if (true || frameCount % int(frameRate*3) == 0){
+        if (frameCount % int(frameRate*3) == 0){
             PVector vec_towards_player = player_pos.copy().sub(pos);
             float variation = random(-spread_angle, spread_angle);
             vec_towards_player.rotate(variation);
             line(pos.x, pos.y, pos.x + vec_towards_player.x*100, pos.y + vec_towards_player.y*100);
         }
-
     }
 
     void display(){
+        PImage sprite;
+        float sprite_time = 20;
+        // OK this could be WAAAAY more efficient/clean with doing some kind of idx += 1 and edge case rules. 
+        switch (cur_anim){
+            case "run-ball":
+                sprite_time = 20;
+                if (frameCount % sprite_time == 0){
+                    if (runb_idx == 0){
+                        runb_idx = 1;
+                    }
+                    else {
+                        runb_idx = 0;
+                        cur_anim = "run";
+                    }
+                }
+                sprite = run_ball_sp[runb_idx];
+                break;
+            case "throw-ball":
+                sprite_time = 20;
+                if (frameCount % sprite_time == 0){
+                    if (throw_idx == 0){
+                        throw_idx = 1;
+                    }
+                    else if (throw_idx == 1){
+                        throw_idx = 2;
+                    }
+                    else {
+                        throw_idx = 0;
+                        cur_anim = "run";
+                    }
+                }
+                sprite = throw_sp[throw_idx];
+                break;
+            default: // running
+                sprite_time = 20;
+                if (frameCount % sprite_time == 0){
+                    if (run_idx == 0){
+                        run_idx = 1;
+                    }
+                    else {
+                        run_idx = 0;
+                    }
+                }
+                sprite = run_sp[run_idx];
+                break;
+        }
         fill(0);
-        ellipse(player_pos.x, player_pos.y, 10, 10);
         imageMode(CENTER);
-        ellipse(pos.x, pos.y, 10, 10);
+
+        pushMatrix();
+        translate(pos.x, pos.y);
+        scale(.3);
+        image(sprite, 0, 0);
+        ellipse(0, 0, 10, 10);
+        popMatrix();
+        
         imageMode(CORNER);
+        scale(1);
     }
-
-
-
 }
