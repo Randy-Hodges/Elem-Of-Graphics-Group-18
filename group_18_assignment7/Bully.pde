@@ -200,7 +200,7 @@ class Bully {
                 dead = true;
                 pos.x = -500;
                 pos.y = -500;
-                bullies_defeated += 1;
+                num_bullies_defeated += 1;
             }
         }
     }

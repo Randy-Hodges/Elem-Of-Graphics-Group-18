@@ -1,7 +1,7 @@
 // Bullies
 int num_bullys = 4;
 Bully[] bullys;
-int bullies_defeated = 0;
+int num_bullies_defeated = 0;
 // Dodgeballs
 Dodgeball[] allBalls;
 int num_balls = 6;
