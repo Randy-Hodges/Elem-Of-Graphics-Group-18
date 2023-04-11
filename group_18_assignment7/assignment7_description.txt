@@ -22,7 +22,10 @@
   2. 
   
   Hannah:
-  1. 
+  1. The classes I created were the Player and Ball class. The Player class is what the user interacts with as it draws the main character on the screen
+  and allow you to move around. I also created a Ball class that allowed the user to throw balls with the spacebar, but Taylor ended up switching the interactivity
+  with the throwBall() function into her class! The Ball class that I created was used as a template for Taylor's Dodgeball class instead! I also created the
+  images of the loading screen and game over screen for when the player either wins or loses.
   2.
   
   Salomonoe:
